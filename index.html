@@ -1,0 +1,5417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>✨ Arnika's Art World ✨ | Where Imagination Becomes Art</title>
+  <meta name="description" content="Personal digital art portfolio and interactive studio for Arnika, a 10-year-old artist. Explore artworks, play with the magic canvas, and discover creative adventures!">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Fredoka:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <style>
+    /* ==========================================================================
+       VARIABLES & DESIGN TOKENS
+       ========================================================================== */
+    :root {
+      --primary: #8b5cf6;
+      --primary-light: #c4b5fd;
+      --primary-dark: #6d28d9;
+      --primary-bg: #f5f3ff;
+      --secondary: #ec4899;
+      --secondary-light: #fbcfe8;
+      --accent-pink: #f472b6;
+      --accent-yellow: #fde047;
+      --accent-mint: #6ee7b7;
+      --accent-sky: #7dd3fc;
+      --accent-peach: #fdba74;
+      --accent-lavender: #ddd6fe;
+
+      --bg-cream: #fdfbf7;
+      --bg-surface: #ffffff;
+      --bg-surface-glass: rgba(255, 255, 255, 0.85);
+      --bg-surface-glass-card: rgba(255, 255, 255, 0.75);
+      --border-subtle: rgba(226, 232, 240, 0.8);
+      --border-focus: #a855f7;
+
+      --text-main: #1e1b4b;
+      --text-muted: #64748b;
+      --text-light: #94a3b8;
+
+      --font-body: 'Outfit', system-ui, -apple-system, sans-serif;
+      --font-heading: 'Fredoka', cursive, system-ui, sans-serif;
+      --font-handwriting: 'Caveat', cursive;
+
+      --radius-sm: 10px;
+      --radius-md: 16px;
+      --radius-lg: 24px;
+      --radius-xl: 32px;
+      --radius-full: 9999px;
+
+      --shadow-sm: 0 2px 8px rgba(139, 92, 246, 0.05);
+      --shadow-md: 0 10px 25px -5px rgba(139, 92, 246, 0.1), 0 8px 10px -6px rgba(139, 92, 246, 0.05);
+      --shadow-lg: 0 20px 35px -5px rgba(139, 92, 246, 0.15), 0 10px 15px -5px rgba(236, 72, 153, 0.08);
+      --shadow-glow: 0 0 25px rgba(192, 132, 252, 0.4);
+
+      --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      --transition-bounce: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    /* ==========================================================================
+       GLOBAL BASE & RESET
+       ========================================================================== */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background-color: var(--bg-cream);
+      color: var(--text-main);
+      line-height: 1.6;
+      overflow-x: hidden;
+      position: relative;
+      background-image: 
+        radial-gradient(at 0% 0%, rgba(245, 208, 254, 0.25) 0px, transparent 50%),
+        radial-gradient(at 100% 0%, rgba(199, 210, 254, 0.3) 0px, transparent 50%),
+        radial-gradient(at 50% 50%, rgba(254, 240, 138, 0.15) 0px, transparent 50%),
+        radial-gradient(at 100% 100%, rgba(251, 207, 232, 0.25) 0px, transparent 50%),
+        radial-gradient(at 0% 100%, rgba(187, 247, 208, 0.2) 0px, transparent 50%);
+      background-attachment: fixed;
+    }
+
+    ::selection {
+      background-color: var(--primary-light);
+      color: var(--primary-dark);
+    }
+
+    :focus-visible {
+      outline: 3px solid var(--border-focus);
+      outline-offset: 3px;
+    }
+
+    button, input, textarea, select {
+      font-family: inherit;
+      color: inherit;
+    }
+
+    button {
+      cursor: pointer;
+      border: none;
+      background: none;
+      user-select: none;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    ul, ol {
+      list-style: none;
+    }
+
+    img, svg {
+      display: block;
+      max-width: 100%;
+    }
+
+    /* Container */
+    .container {
+      width: 100%;
+      max-width: 1240px;
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+
+    /* Section Header */
+    .section-header {
+      text-align: center;
+      max-width: 680px;
+      margin: 0 auto 3.5rem auto;
+      position: relative;
+    }
+
+    .section-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.4rem 1.1rem;
+      background: white;
+      border: 1px solid var(--primary-light);
+      border-radius: var(--radius-full);
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      box-shadow: var(--shadow-sm);
+      margin-bottom: 1rem;
+    }
+
+    .section-title {
+      font-family: var(--font-heading);
+      font-size: clamp(2.2rem, 4vw, 3.2rem);
+      font-weight: 700;
+      color: var(--text-main);
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+
+    .section-title span.highlight {
+      background: linear-gradient(135deg, #ec4899 0%, #8b5cf6 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      display: inline-block;
+    }
+
+    .section-subtitle {
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* Standard Button Styles */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      padding: 0.85rem 1.8rem;
+      border-radius: var(--radius-full);
+      font-weight: 600;
+      font-size: 1rem;
+      transition: var(--transition-bounce);
+      box-shadow: var(--shadow-sm);
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #a855f7 0%, #ec4899 100%);
+      color: white;
+      box-shadow: 0 8px 20px -4px rgba(168, 85, 247, 0.4);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px) scale(1.02);
+      box-shadow: 0 14px 28px -4px rgba(168, 85, 247, 0.5);
+    }
+
+    .btn-primary:active {
+      transform: translateY(0) scale(0.98);
+    }
+
+    .btn-secondary {
+      background: white;
+      color: var(--text-main);
+      border: 1.5px solid rgba(226, 232, 240, 0.9);
+    }
+
+    .btn-secondary:hover {
+      background: #faf5ff;
+      border-color: var(--primary-light);
+      color: var(--primary);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+
+    /* Common Card Styles */
+    .card-glass {
+      background: var(--bg-surface-glass);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.8);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow-md);
+      transition: var(--transition-smooth);
+    }
+
+    .card-glass:hover {
+      box-shadow: var(--shadow-lg);
+    }
+
+    /* ==========================================================================
+       NAVIGATION BAR
+       ========================================================================== */
+    .site-nav {
+      position: sticky;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      transition: var(--transition-smooth);
+      padding: 1.1rem 0;
+      background: transparent;
+    }
+
+    .site-nav.scrolled {
+      background: rgba(253, 251, 247, 0.92);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      box-shadow: 0 4px 20px rgba(139, 92, 246, 0.08);
+      padding: 0.8rem 0;
+      border-bottom: 1px solid rgba(226, 232, 240, 0.6);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-family: var(--font-heading);
+      font-size: 1.45rem;
+      font-weight: 700;
+      color: var(--text-main);
+      transition: var(--transition-bounce);
+    }
+
+    .brand-logo:hover {
+      transform: scale(1.05);
+    }
+
+    .brand-symbol {
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #a855f7 0%, #f43f5e 100%);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      box-shadow: 0 4px 12px rgba(168, 85, 247, 0.35);
+      position: relative;
+    }
+
+    .brand-symbol::after {
+      content: '✦';
+      position: absolute;
+      top: -4px;
+      right: -4px;
+      font-size: 0.75rem;
+      color: #fde047;
+      animation: floatStar 2s ease-in-out infinite alternate;
+    }
+
+    @keyframes floatStar {
+      0% { transform: translateY(0) rotate(0deg) scale(1); }
+      100% { transform: translateY(-4px) rotate(25deg) scale(1.25); }
+    }
+
+    .brand-text {
+      letter-spacing: 0.02em;
+    }
+
+    .brand-text span {
+      color: var(--primary);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: rgba(255, 255, 255, 0.7);
+      padding: 0.35rem 0.6rem;
+      border-radius: var(--radius-full);
+      border: 1px solid rgba(226, 232, 240, 0.7);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .nav-link {
+      padding: 0.55rem 1.1rem;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      border-radius: var(--radius-full);
+      transition: var(--transition-smooth);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      position: relative;
+    }
+
+    .nav-link:hover {
+      color: var(--primary);
+      background: rgba(245, 243, 255, 0.8);
+    }
+
+    .nav-link.active {
+      color: white;
+      background: linear-gradient(135deg, #a855f7, #ec4899);
+      box-shadow: 0 4px 12px rgba(168, 85, 247, 0.3);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .secret-star-btn {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #fef08a;
+      color: #ca8a04;
+      font-size: 1.1rem;
+      transition: var(--transition-bounce);
+      box-shadow: 0 0 10px rgba(254, 240, 138, 0.8);
+      position: relative;
+    }
+
+    .secret-star-btn:hover {
+      transform: scale(1.2) rotate(20deg);
+      box-shadow: 0 0 18px rgba(250, 204, 21, 0.9);
+    }
+
+    .audio-btn {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: white;
+      border: 1px solid var(--border-subtle);
+      color: var(--text-muted);
+      font-size: 1rem;
+      transition: var(--transition-smooth);
+    }
+
+    .audio-btn:hover {
+      background: var(--primary-bg);
+      color: var(--primary);
+      border-color: var(--primary-light);
+    }
+
+    /* Mobile Hamburger */
+    .mobile-menu-toggle {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      background: white;
+      border: 1px solid var(--border-subtle);
+      gap: 5px;
+      z-index: 1100;
+    }
+
+    .hamburger-line {
+      width: 20px;
+      height: 2.5px;
+      background: var(--text-main);
+      border-radius: 3px;
+      transition: var(--transition-smooth);
+    }
+
+    .mobile-menu-toggle.open .hamburger-line:nth-child(1) {
+      transform: translateY(7.5px) rotate(45deg);
+    }
+    .mobile-menu-toggle.open .hamburger-line:nth-child(2) {
+      opacity: 0;
+      transform: scaleX(0);
+    }
+    .mobile-menu-toggle.open .hamburger-line:nth-child(3) {
+      transform: translateY(-7.5px) rotate(-45deg);
+    }
+
+    /* ==========================================================================
+       HERO SECTION
+       ========================================================================== */
+    .hero-section {
+      min-height: calc(100vh - 80px);
+      display: flex;
+      align-items: center;
+      padding: 3.5rem 0 5rem 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      align-items: center;
+      gap: 3.5rem;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.45rem 1.2rem;
+      background: white;
+      border: 1px solid rgba(216, 180, 254, 0.6);
+      border-radius: var(--radius-full);
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: #9333ea;
+      margin-bottom: 1.4rem;
+      box-shadow: 0 4px 15px rgba(216, 180, 254, 0.25);
+      animation: pulseGlow 3s infinite alternate;
+    }
+
+    @keyframes pulseGlow {
+      0% { box-shadow: 0 4px 12px rgba(216, 180, 254, 0.2); }
+      100% { box-shadow: 0 6px 20px rgba(216, 180, 254, 0.5); }
+    }
+
+    .hero-title {
+      font-family: var(--font-heading);
+      font-size: clamp(2.8rem, 5.5vw, 4.4rem);
+      font-weight: 700;
+      line-height: 1.1;
+      color: var(--text-main);
+      margin-bottom: 0.8rem;
+    }
+
+    .hero-title .gradient-text {
+      background: linear-gradient(135deg, #a855f7 0%, #ec4899 50%, #f59e0b 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-subline {
+      font-family: var(--font-heading);
+      font-size: clamp(1.4rem, 2.8vw, 2rem);
+      font-weight: 500;
+      color: #475569;
+      margin-bottom: 1.2rem;
+    }
+
+    .hero-desc {
+      font-size: 1.2rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+      max-width: 520px;
+      margin-bottom: 2.2rem;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.1rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .hero-badges {
+      display: flex;
+      align-items: center;
+      gap: 1.8rem;
+      padding-top: 1.2rem;
+      border-top: 1px dashed rgba(203, 213, 225, 0.8);
+    }
+
+    .hero-badge-item {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .badge-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      background: white;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .badge-text-title {
+      font-size: 0.8rem;
+      color: var(--text-light);
+      text-transform: uppercase;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+    }
+
+    .badge-text-val {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    /* Hero Artistic Composition */
+    .hero-artwork-composition {
+      position: relative;
+      width: 100%;
+      height: 520px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .composition-base {
+      width: 360px;
+      height: 450px;
+      background: white;
+      border-radius: 36px;
+      padding: 16px;
+      box-shadow: 0 25px 60px -15px rgba(139, 92, 246, 0.25), 0 0 0 1px rgba(255, 255, 255, 0.9);
+      position: relative;
+      transform: rotate(-3deg);
+      transition: transform 0.5s ease;
+      cursor: pointer;
+    }
+
+    .composition-base:hover {
+      transform: rotate(0deg) scale(1.02);
+    }
+
+    .composition-canvas {
+      width: 100%;
+      height: 100%;
+      border-radius: 24px;
+      overflow: hidden;
+      background: #faf5ff;
+      border: 2px dashed rgba(216, 180, 254, 0.8);
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Floating Art Elements */
+    .float-item {
+      position: absolute;
+      z-index: 3;
+      transition: transform 0.2s ease-out;
+      pointer-events: auto;
+    }
+
+    .float-item-palette {
+      top: 15px;
+      right: -25px;
+      background: white;
+      padding: 14px;
+      border-radius: 20px;
+      box-shadow: var(--shadow-lg);
+      transform: rotate(12deg);
+      animation: gentleFloat1 4s ease-in-out infinite alternate;
+    }
+
+    .float-item-brush {
+      bottom: 25px;
+      left: -35px;
+      background: white;
+      padding: 12px 18px;
+      border-radius: 18px;
+      box-shadow: var(--shadow-lg);
+      transform: rotate(-15deg);
+      animation: gentleFloat2 5s ease-in-out infinite alternate;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 700;
+      font-size: 0.9rem;
+      color: #9333ea;
+    }
+
+    .float-item-note {
+      top: -20px;
+      left: 10px;
+      background: #fef08a;
+      color: #713f12;
+      padding: 12px 18px;
+      border-radius: 12px;
+      font-family: var(--font-handwriting);
+      font-size: 1.35rem;
+      font-weight: 700;
+      box-shadow: 0 8px 20px rgba(234, 179, 8, 0.2);
+      transform: rotate(-8deg);
+      animation: gentleFloat3 4.5s ease-in-out infinite alternate;
+    }
+
+    .float-item-butterfly {
+      bottom: -15px;
+      right: 40px;
+      font-size: 2.2rem;
+      animation: butterflyFlutter 3s ease-in-out infinite;
+    }
+
+    .float-item-star1 {
+      top: 40%;
+      right: -45px;
+      font-size: 2rem;
+      animation: spinSlow 12s linear infinite;
+    }
+
+    .float-item-star2 {
+      bottom: 40%;
+      left: -40px;
+      font-size: 1.6rem;
+      animation: floatStar 3s ease-in-out infinite alternate;
+    }
+
+    @keyframes gentleFloat1 {
+      0% { transform: translateY(0) rotate(12deg); }
+      100% { transform: translateY(-12px) rotate(16deg); }
+    }
+    @keyframes gentleFloat2 {
+      0% { transform: translateY(0) rotate(-15deg); }
+      100% { transform: translateY(-14px) rotate(-10deg); }
+    }
+    @keyframes gentleFloat3 {
+      0% { transform: translateY(0) rotate(-8deg); }
+      100% { transform: translateY(-10px) rotate(-5deg); }
+    }
+    @keyframes butterflyFlutter {
+      0%, 100% { transform: translate(0, 0) rotate(0deg) scale(1); }
+      25% { transform: translate(6px, -10px) rotate(8deg) scale(1.1); }
+      50% { transform: translate(-4px, -18px) rotate(-5deg) scale(0.95); }
+      75% { transform: translate(8px, -8px) rotate(10deg) scale(1.05); }
+    }
+    @keyframes spinSlow {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    /* ==========================================================================
+       ABOUT SECTION
+       ========================================================================== */
+    .about-section {
+      padding: 6rem 0;
+      position: relative;
+    }
+
+    .about-card {
+      background: white;
+      border-radius: var(--radius-xl);
+      padding: 3.5rem;
+      box-shadow: 0 20px 45px -10px rgba(139, 92, 246, 0.12);
+      border: 1px solid rgba(226, 232, 240, 0.8);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .about-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 8px;
+      background: linear-gradient(90deg, #ec4899, #8b5cf6, #3b82f6, #10b981, #f59e0b);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 3.5rem;
+      align-items: center;
+    }
+
+    .about-avatar-wrapper {
+      position: relative;
+      display: flex;
+      justify-content: center;
+    }
+
+    .about-avatar-card {
+      width: 320px;
+      height: 380px;
+      border-radius: 28px;
+      background: linear-gradient(135deg, #fbcfe8 0%, #c4b5fd 100%);
+      padding: 12px;
+      box-shadow: var(--shadow-lg);
+      transform: rotate(-2deg);
+      transition: var(--transition-bounce);
+    }
+
+    .about-avatar-card:hover {
+      transform: rotate(0deg) scale(1.03);
+    }
+
+    .avatar-inner {
+      width: 100%;
+      height: 100%;
+      background: white;
+      border-radius: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      text-align: center;
+      position: relative;
+    }
+
+    .avatar-drawing {
+      width: 140px;
+      height: 140px;
+      margin-bottom: 1.2rem;
+      position: relative;
+    }
+
+    .avatar-badge-class {
+      display: inline-block;
+      padding: 0.35rem 0.9rem;
+      background: #faf5ff;
+      color: var(--primary);
+      border: 1px solid var(--primary-light);
+      border-radius: var(--radius-full);
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .avatar-name {
+      font-family: var(--font-heading);
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    .avatar-quote {
+      font-family: var(--font-handwriting);
+      font-size: 1.4rem;
+      color: #7c3aed;
+      margin-top: 0.4rem;
+    }
+
+    .about-details {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .about-heading {
+      font-family: var(--font-heading);
+      font-size: 2.4rem;
+      font-weight: 700;
+      margin-bottom: 1.2rem;
+      color: var(--text-main);
+    }
+
+    .about-bio-box {
+      background: #faf5ff;
+      border-left: 4px solid var(--primary);
+      padding: 1.4rem 1.8rem;
+      border-radius: 0 16px 16px 0;
+      margin-bottom: 2rem;
+      font-size: 1.15rem;
+      line-height: 1.7;
+      color: #334155;
+      position: relative;
+    }
+
+    .about-bio-box .editable-hint {
+      font-size: 0.8rem;
+      color: #8b5cf6;
+      font-weight: 600;
+      margin-top: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    .creative-stats-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.2rem;
+    }
+
+    .creative-stat-item {
+      background: white;
+      border: 1px solid rgba(226, 232, 240, 0.9);
+      padding: 1.2rem;
+      border-radius: 18px;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      transition: var(--transition-smooth);
+    }
+
+    .creative-stat-item:hover {
+      border-color: var(--primary-light);
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .stat-emoji {
+      font-size: 1.8rem;
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 14px;
+      background: #fdf2f8;
+    }
+
+    .stat-title {
+      font-family: var(--font-heading);
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--text-main);
+    }
+
+    .stat-desc {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    /* ==========================================================================
+       GALLERY SECTION
+       ========================================================================== */
+    .gallery-section {
+      padding: 6rem 0;
+      position: relative;
+    }
+
+    .gallery-filter-bar {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.6rem;
+      margin-bottom: 3rem;
+    }
+
+    .filter-btn {
+      padding: 0.6rem 1.4rem;
+      border-radius: var(--radius-full);
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      background: white;
+      border: 1.5px solid rgba(226, 232, 240, 0.8);
+      transition: var(--transition-bounce);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .filter-btn:hover {
+      border-color: var(--primary-light);
+      color: var(--primary);
+      transform: translateY(-2px);
+    }
+
+    .filter-btn.active {
+      background: linear-gradient(135deg, #a855f7 0%, #ec4899 100%);
+      color: white;
+      border-color: transparent;
+      box-shadow: 0 6px 18px rgba(168, 85, 247, 0.35);
+    }
+
+    .filter-btn .count-badge {
+      display: inline-block;
+      padding: 0.15rem 0.55rem;
+      font-size: 0.75rem;
+      border-radius: var(--radius-full);
+      background: rgba(0, 0, 0, 0.08);
+      color: inherit;
+    }
+
+    .filter-btn.active .count-badge {
+      background: rgba(255, 255, 255, 0.25);
+      color: white;
+    }
+
+    /* Gallery Grid */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 2rem;
+    }
+
+    .artwork-card {
+      background: white;
+      border-radius: 22px;
+      overflow: hidden;
+      border: 1px solid rgba(226, 232, 240, 0.8);
+      box-shadow: 0 8px 20px -4px rgba(139, 92, 246, 0.08);
+      transition: var(--transition-bounce);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    .artwork-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 30px -6px rgba(139, 92, 246, 0.16);
+      border-color: var(--primary-light);
+    }
+
+    .artwork-img-container {
+      width: 100%;
+      height: 240px;
+      background: #f8fafc;
+      position: relative;
+      cursor: pointer;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .artwork-img-container svg {
+      width: 100%;
+      height: 100%;
+      transition: transform 0.5s ease;
+    }
+
+    .artwork-card:hover .artwork-img-container svg {
+      transform: scale(1.05);
+    }
+
+    .artwork-badge-category {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      padding: 0.35rem 0.85rem;
+      border-radius: var(--radius-full);
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+    }
+
+    .artwork-fav-btn {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      color: #94a3b8;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+      transition: var(--transition-bounce);
+      z-index: 2;
+    }
+
+    .artwork-fav-btn:hover {
+      transform: scale(1.15);
+      color: #f43f5e;
+    }
+
+    .artwork-fav-btn.favorited {
+      color: #f43f5e;
+      background: #ffe4e6;
+    }
+
+    .artwork-info {
+      padding: 1.4rem;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .artwork-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 0.5rem;
+    }
+
+    .artwork-date {
+      font-size: 0.8rem;
+      color: var(--text-light);
+      font-weight: 500;
+    }
+
+    .artwork-title {
+      font-family: var(--font-heading);
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 0.4rem;
+      cursor: pointer;
+      transition: color 0.2s ease;
+    }
+
+    .artwork-title:hover {
+      color: var(--primary);
+    }
+
+    .artwork-desc {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+      margin-bottom: 1.2rem;
+      flex-grow: 1;
+    }
+
+    .artwork-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 0.8rem;
+      border-top: 1px solid rgba(241, 245, 249, 1);
+    }
+
+    .view-artwork-link {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+      transition: gap 0.2s ease;
+    }
+
+    .view-artwork-link:hover {
+      gap: 0.6rem;
+    }
+
+    /* Lightbox Modal */
+    .lightbox-modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(15, 23, 42, 0.88);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      z-index: 2000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .lightbox-modal.active {
+      display: flex;
+      opacity: 1;
+    }
+
+    .lightbox-container {
+      background: white;
+      border-radius: 28px;
+      max-width: 960px;
+      width: 100%;
+      max-height: 90vh;
+      overflow-y: auto;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      position: relative;
+      animation: modalZoom 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    @keyframes modalZoom {
+      from { transform: scale(0.9) translateY(20px); opacity: 0; }
+      to { transform: scale(1) translateY(0); opacity: 1; }
+    }
+
+    .lightbox-preview-area {
+      background: #faf5ff;
+      border-radius: 28px 0 0 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2.5rem;
+      position: relative;
+      min-height: 420px;
+    }
+
+    .lightbox-preview-area svg {
+      max-width: 100%;
+      max-height: 380px;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .lightbox-details-area {
+      padding: 3rem 2.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .lightbox-close-btn {
+      position: absolute;
+      top: 1.2rem;
+      right: 1.2rem;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: #f1f5f9;
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      transition: var(--transition-smooth);
+      z-index: 10;
+    }
+
+    .lightbox-close-btn:hover {
+      background: #fee2e2;
+      color: #ef4444;
+      transform: rotate(90deg);
+    }
+
+    .lightbox-nav-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: white;
+      color: var(--text-main);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      transition: var(--transition-bounce);
+      z-index: 5;
+    }
+
+    .lightbox-nav-btn:hover {
+      background: var(--primary);
+      color: white;
+      transform: translateY(-50%) scale(1.1);
+    }
+
+    .lightbox-nav-prev { left: 1rem; }
+    .lightbox-nav-next { right: 1rem; }
+
+    /* ==========================================================================
+       INTERACTIVE DRAWING STUDIO
+       ========================================================================== */
+    .studio-section {
+      padding: 6rem 0;
+      position: relative;
+    }
+
+    .studio-card {
+      background: white;
+      border-radius: 32px;
+      border: 1px solid rgba(226, 232, 240, 0.9);
+      box-shadow: 0 20px 50px -10px rgba(139, 92, 246, 0.15);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .studio-header {
+      background: #faf5ff;
+      border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+      padding: 1.2rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .studio-active-challenge {
+      display: none;
+      align-items: center;
+      gap: 0.6rem;
+      background: #fef3c7;
+      color: #92400e;
+      padding: 0.4rem 1rem;
+      border-radius: var(--radius-full);
+      font-size: 0.9rem;
+      font-weight: 600;
+      border: 1px solid #fde68a;
+    }
+
+    .studio-active-challenge.visible {
+      display: flex;
+    }
+
+    .studio-body {
+      display: grid;
+      grid-template-columns: 290px 1fr;
+      min-height: 600px;
+    }
+
+    /* Studio Toolbar */
+    .studio-toolbar {
+      background: #ffffff;
+      border-right: 1px solid rgba(226, 232, 240, 0.8);
+      padding: 1.8rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.8rem;
+      overflow-y: auto;
+    }
+
+    .tool-group-title {
+      font-size: 0.8rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--text-light);
+      margin-bottom: 0.6rem;
+    }
+
+    .tools-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.6rem;
+    }
+
+    .tool-btn {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.3rem;
+      padding: 0.75rem 0.5rem;
+      border-radius: 14px;
+      border: 1.5px solid rgba(226, 232, 240, 0.8);
+      background: #f8fafc;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      transition: var(--transition-bounce);
+    }
+
+    .tool-btn:hover {
+      background: #faf5ff;
+      border-color: var(--primary-light);
+      color: var(--primary);
+      transform: translateY(-2px);
+    }
+
+    .tool-btn.active {
+      background: linear-gradient(135deg, #a855f7, #ec4899);
+      border-color: transparent;
+      color: white;
+      box-shadow: 0 6px 14px rgba(168, 85, 247, 0.3);
+    }
+
+    .tool-btn .tool-icon {
+      font-size: 1.3rem;
+    }
+
+    /* Special Magic Brushes */
+    .magic-brushes-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.5rem;
+    }
+
+    .magic-btn {
+      padding: 0.6rem 0.3rem;
+      border-radius: 12px;
+      border: 1.5px solid #fed7aa;
+      background: #fffaf0;
+      color: #c2410c;
+      font-size: 0.75rem;
+      font-weight: 700;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.2rem;
+      transition: var(--transition-bounce);
+    }
+
+    .magic-btn:hover {
+      background: #ffedd5;
+      transform: translateY(-2px);
+    }
+
+    .magic-btn.active {
+      background: linear-gradient(135deg, #f97316, #ec4899);
+      border-color: transparent;
+      color: white;
+      box-shadow: 0 4px 12px rgba(249, 115, 22, 0.35);
+    }
+
+    /* Color Palette */
+    .color-swatches-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 0.5rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .color-swatch {
+      width: 100%;
+      aspect-ratio: 1;
+      border-radius: 10px;
+      border: 2px solid white;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+      transition: var(--transition-bounce);
+      position: relative;
+    }
+
+    .color-swatch:hover {
+      transform: scale(1.2);
+      z-index: 2;
+    }
+
+    .color-swatch.active {
+      transform: scale(1.15);
+      border: 2.5px solid var(--text-main);
+      box-shadow: 0 0 0 2px white, 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .custom-color-picker-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      padding: 0.5rem 0.8rem;
+      background: #f8fafc;
+      border-radius: 12px;
+      border: 1px solid var(--border-subtle);
+    }
+
+    .custom-color-input {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      width: 32px;
+      height: 32px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      background: transparent;
+    }
+
+    .custom-color-input::-webkit-color-swatch-wrapper {
+      padding: 0;
+    }
+
+    .custom-color-input::-webkit-color-swatch {
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+    }
+
+    /* Slider Controls */
+    .slider-control {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .slider-label-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-main);
+    }
+
+    .slider-input {
+      width: 100%;
+      height: 8px;
+      -webkit-appearance: none;
+      background: #e2e8f0;
+      border-radius: 4px;
+      outline: none;
+    }
+
+    .slider-input::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: var(--primary);
+      cursor: pointer;
+      box-shadow: 0 2px 6px rgba(139, 92, 246, 0.4);
+      border: 2px solid white;
+      transition: transform 0.1s ease;
+    }
+
+    .slider-input::-webkit-slider-thumb:hover {
+      transform: scale(1.2);
+    }
+
+    /* Live Brush Preview */
+    .brush-preview-box {
+      width: 100%;
+      height: 50px;
+      background: #f8fafc;
+      border: 1px dashed #cbd5e1;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 0.4rem;
+    }
+
+    .brush-preview-dot {
+      border-radius: 50%;
+      background: var(--primary);
+      transition: width 0.1s, height 0.1s, background-color 0.2s;
+    }
+
+    /* Studio Canvas Area */
+    .studio-canvas-container {
+      background: #f1f5f9;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      padding: 1.5rem;
+      touch-action: none;
+    }
+
+    .drawing-canvas-board {
+      background: white;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      border-radius: 16px;
+      cursor: crosshair;
+      touch-action: none;
+      display: block;
+      width: 100%;
+      height: 100%;
+      max-height: 640px;
+    }
+
+    .studio-action-bar {
+      position: absolute;
+      top: 1.5rem;
+      right: 1.5rem;
+      display: flex;
+      gap: 0.5rem;
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(8px);
+      padding: 0.4rem;
+      border-radius: var(--radius-full);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+      border: 1px solid rgba(226, 232, 240, 0.8);
+      z-index: 10;
+    }
+
+    .studio-btn {
+      padding: 0.5rem 0.9rem;
+      border-radius: var(--radius-full);
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+      transition: var(--transition-bounce);
+    }
+
+    .studio-btn:hover:not(:disabled) {
+      background: #faf5ff;
+      color: var(--primary);
+      transform: translateY(-2px);
+    }
+
+    .studio-btn:disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+    }
+
+    .studio-btn-primary {
+      background: linear-gradient(135deg, #a855f7, #ec4899);
+      color: white;
+    }
+
+    .studio-btn-primary:hover:not(:disabled) {
+      background: linear-gradient(135deg, #9333ea, #db2777);
+      color: white;
+      box-shadow: 0 4px 12px rgba(168, 85, 247, 0.35);
+    }
+
+    /* Confirmation Modal */
+    .confirm-modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(15, 23, 42, 0.6);
+      backdrop-filter: blur(8px);
+      z-index: 3000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+    }
+
+    .confirm-modal-overlay.active {
+      display: flex;
+    }
+
+    .confirm-modal-card {
+      background: white;
+      border-radius: 24px;
+      padding: 2.2rem;
+      max-width: 440px;
+      width: 100%;
+      text-align: center;
+      box-shadow: var(--shadow-lg);
+      animation: modalZoom 0.3s ease;
+    }
+
+    .confirm-modal-icon {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .confirm-modal-title {
+      font-family: var(--font-heading);
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin-bottom: 0.6rem;
+    }
+
+    .confirm-modal-desc {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      margin-bottom: 1.8rem;
+    }
+
+    .confirm-modal-actions {
+      display: flex;
+      gap: 0.8rem;
+      justify-content: center;
+    }
+
+    /* ==========================================================================
+       DRAWING CHALLENGES
+       ========================================================================== */
+    .challenges-section {
+      padding: 5rem 0;
+      position: relative;
+    }
+
+    .challenge-banner-card {
+      background: linear-gradient(135deg, #fdf4ff 0%, #ede9fe 50%, #e0f2fe 100%);
+      border: 2px dashed rgba(192, 132, 252, 0.6);
+      border-radius: 28px;
+      padding: 3rem;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 15px 35px -5px rgba(139, 92, 246, 0.1);
+    }
+
+    .challenge-banner-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .challenge-display-pill {
+      background: white;
+      border-radius: 20px;
+      padding: 1.8rem 2.2rem;
+      box-shadow: var(--shadow-md);
+      margin: 1.8rem 0;
+      border: 1px solid rgba(255, 255, 255, 0.8);
+      transition: var(--transition-bounce);
+    }
+
+    .challenge-display-pill:hover {
+      transform: scale(1.02);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .current-challenge-text {
+      font-family: var(--font-heading);
+      font-size: clamp(1.5rem, 3.2vw, 2.2rem);
+      font-weight: 700;
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.8rem;
+      min-height: 3.5rem;
+    }
+
+    .challenge-actions-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    .completed-challenges-tracker {
+      margin-top: 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.8rem;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #6d28d9;
+    }
+
+    /* ==========================================================================
+       ACHIEVEMENTS SYSTEM
+       ========================================================================== */
+    .achievements-section {
+      padding: 5rem 0;
+      position: relative;
+    }
+
+    .achievements-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .achievement-card {
+      background: white;
+      border-radius: 20px;
+      padding: 1.6rem;
+      border: 1.5px solid rgba(226, 232, 240, 0.8);
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      transition: var(--transition-bounce);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .achievement-card.unlocked {
+      border-color: #fde047;
+      background: linear-gradient(180deg, #ffffff 0%, #fefce8 100%);
+      box-shadow: 0 10px 25px -5px rgba(234, 179, 8, 0.2);
+    }
+
+    .achievement-card.locked {
+      opacity: 0.65;
+      background: #f8fafc;
+      filter: grayscale(0.6);
+    }
+
+    .achievement-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .achievement-icon-circle {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: #faf5ff;
+      border: 2px solid #e9d5ff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      transition: var(--transition-bounce);
+    }
+
+    .achievement-card.unlocked .achievement-icon-circle {
+      background: #fef08a;
+      border-color: #facc15;
+      box-shadow: 0 0 20px rgba(250, 204, 21, 0.5);
+      animation: gentleWiggle 3s ease infinite;
+    }
+
+    @keyframes gentleWiggle {
+      0%, 100% { transform: rotate(0deg); }
+      25% { transform: rotate(-5deg); }
+      75% { transform: rotate(5deg); }
+    }
+
+    .achievement-title {
+      font-family: var(--font-heading);
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 0.35rem;
+    }
+
+    .achievement-desc {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.4;
+      margin-bottom: 1rem;
+    }
+
+    .achievement-status-tag {
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 0.25rem 0.75rem;
+      border-radius: var(--radius-full);
+      background: #e2e8f0;
+      color: #64748b;
+    }
+
+    .achievement-card.unlocked .achievement-status-tag {
+      background: #fef08a;
+      color: #854d0e;
+    }
+
+    /* Achievement Pop-up Modal */
+    .achievement-popup-modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(15, 23, 42, 0.75);
+      backdrop-filter: blur(10px);
+      z-index: 3500;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+    }
+
+    .achievement-popup-modal.active {
+      display: flex;
+    }
+
+    .achievement-popup-box {
+      background: white;
+      border-radius: 32px;
+      padding: 3rem 2.5rem;
+      max-width: 480px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.3);
+      position: relative;
+      animation: celebrationBounce 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    @keyframes celebrationBounce {
+      0% { transform: scale(0.6) rotate(-8deg); opacity: 0; }
+      100% { transform: scale(1) rotate(0deg); opacity: 1; }
+    }
+
+    .celebrate-icon-large {
+      font-size: 4.5rem;
+      margin-bottom: 1rem;
+      display: inline-block;
+      animation: pulseGlow 2s infinite alternate;
+    }
+
+    /* ==========================================================================
+       DIGITAL SKETCHBOOK
+       ========================================================================== */
+    .sketchbook-section {
+      padding: 6rem 0;
+      position: relative;
+    }
+
+    .sketchbook-wrapper {
+      max-width: 900px;
+      margin: 0 auto;
+      perspective: 1200px;
+    }
+
+    .sketchbook-book {
+      background: #fffdf8;
+      border-radius: 28px;
+      box-shadow: 
+        0 25px 50px -12px rgba(120, 53, 15, 0.15),
+        0 0 0 12px #fde68a,
+        0 0 0 16px #fcd34d;
+      min-height: 520px;
+      padding: 3.5rem 3rem 2.5rem 4rem;
+      position: relative;
+      border: 1px solid #fef3c7;
+      transition: transform 0.4s ease;
+    }
+
+    /* Spiral spine decoration */
+    .sketchbook-book::before {
+      content: '';
+      position: absolute;
+      top: 20px;
+      bottom: 20px;
+      left: 18px;
+      width: 12px;
+      background-image: radial-gradient(circle, #78350f 4px, transparent 5px);
+      background-size: 12px 28px;
+      background-repeat: repeat-y;
+      opacity: 0.6;
+    }
+
+    .sketchbook-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 2px dashed #fef08a;
+      padding-bottom: 1.2rem;
+      margin-bottom: 2rem;
+    }
+
+    .sketchbook-title {
+      font-family: var(--font-handwriting);
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: #92400e;
+    }
+
+    .sketchbook-page-indicator {
+      font-family: var(--font-handwriting);
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #b45309;
+    }
+
+    .sketchbook-page-content {
+      min-height: 320px;
+    }
+
+    .sketchbook-page {
+      display: none;
+      animation: pageTurnAnim 0.4s ease;
+    }
+
+    .sketchbook-page.active {
+      display: block;
+    }
+
+    @keyframes pageTurnAnim {
+      from { opacity: 0; transform: translateX(20px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+
+    /* Sketchbook Page 1: Things to draw checklist */
+    .todo-list-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+
+    .todo-item {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      background: white;
+      padding: 0.75rem 1rem;
+      border-radius: 12px;
+      border: 1px solid #fef3c7;
+      font-size: 1.05rem;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.03);
+    }
+
+    .todo-item input[type="checkbox"] {
+      width: 20px;
+      height: 20px;
+      cursor: pointer;
+      accent-color: #d97706;
+    }
+
+    .todo-item.checked span {
+      text-decoration: line-through;
+      color: #94a3b8;
+    }
+
+    .todo-input-row {
+      display: flex;
+      gap: 0.6rem;
+      margin-top: 1rem;
+    }
+
+    .todo-input-text {
+      flex: 1;
+      padding: 0.7rem 1.2rem;
+      border-radius: var(--radius-full);
+      border: 1px solid #cbd5e1;
+      font-size: 0.95rem;
+      outline: none;
+    }
+
+    .todo-input-text:focus {
+      border-color: #d97706;
+    }
+
+    /* Sketchbook Page 2: Favorite Colors */
+    .fav-colors-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+      gap: 1.2rem;
+      margin-top: 1rem;
+    }
+
+    .fav-color-card {
+      background: white;
+      border-radius: 16px;
+      padding: 10px;
+      box-shadow: var(--shadow-sm);
+      text-align: center;
+      border: 1px solid #fef3c7;
+    }
+
+    .fav-color-chip {
+      width: 100%;
+      height: 70px;
+      border-radius: 10px;
+      margin-bottom: 0.5rem;
+    }
+
+    .fav-color-name {
+      font-family: var(--font-handwriting);
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #78350f;
+    }
+
+    /* Sketchbook Page 3 & 4: Sticky Notes */
+    .notes-board-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 1.2rem;
+      margin-top: 1rem;
+    }
+
+    .sticky-note-card {
+      padding: 1.2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+      font-family: var(--font-handwriting);
+      font-size: 1.3rem;
+      line-height: 1.4;
+      position: relative;
+      transition: transform 0.2s ease;
+    }
+
+    .sticky-note-card:hover {
+      transform: scale(1.05) rotate(0deg) !important;
+      z-index: 5;
+    }
+
+    .sticky-note-delete {
+      position: absolute;
+      top: 6px;
+      right: 6px;
+      font-size: 0.9rem;
+      color: rgba(0, 0, 0, 0.3);
+      cursor: pointer;
+    }
+
+    .sticky-note-delete:hover {
+      color: #ef4444;
+    }
+
+    .sketchbook-footer-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 2rem;
+      padding-top: 1.2rem;
+      border-top: 1px dashed #fef08a;
+    }
+
+    /* ==========================================================================
+       FUN ZONE
+       ========================================================================== */
+    .funzone-section {
+      padding: 6rem 0;
+      position: relative;
+    }
+
+    .funzone-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+    }
+
+    .fun-card {
+      background: white;
+      border-radius: 28px;
+      padding: 2.2rem;
+      border: 1px solid rgba(226, 232, 240, 0.9);
+      box-shadow: var(--shadow-md);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: var(--transition-bounce);
+    }
+
+    .fun-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .fun-card-header {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      margin-bottom: 1.4rem;
+    }
+
+    .fun-card-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.6rem;
+      background: #faf5ff;
+    }
+
+    .fun-card-title {
+      font-family: var(--font-heading);
+      font-size: 1.45rem;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    /* Color Mixer Widget */
+    .color-mixer-widget {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+
+    .mixer-selectors-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.2rem;
+    }
+
+    .mixer-swatch-box {
+      width: 60px;
+      height: 60px;
+      border-radius: 16px;
+      border: 3px solid white;
+      box-shadow: var(--shadow-md);
+      cursor: pointer;
+      position: relative;
+    }
+
+    .mixer-swatch-box input[type="color"] {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      cursor: pointer;
+    }
+
+    .mixer-plus {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .mixer-result-box {
+      padding: 1.4rem;
+      border-radius: 20px;
+      background: #faf5ff;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .mixer-result-preview {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      border: 4px solid white;
+      box-shadow: var(--shadow-lg);
+      transition: background-color 0.3s ease;
+    }
+
+    .mixer-result-name {
+      font-family: var(--font-heading);
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    /* Random Idea Mashup Widget */
+    .mashup-display-box {
+      background: #f8fafc;
+      border: 2px dashed #cbd5e1;
+      border-radius: 18px;
+      padding: 1.6rem;
+      text-align: center;
+      margin-bottom: 1.4rem;
+      min-height: 110px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .mashup-idea-text {
+      font-family: var(--font-heading);
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #4338ca;
+      line-height: 1.5;
+    }
+
+    /* Art Quiz Widget */
+    .quiz-container {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .quiz-question-text {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text-main);
+      min-height: 48px;
+    }
+
+    .quiz-options-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .quiz-option-btn {
+      padding: 0.7rem 1.2rem;
+      border-radius: 12px;
+      border: 1.5px solid #e2e8f0;
+      background: #f8fafc;
+      text-align: left;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text-main);
+      transition: var(--transition-smooth);
+    }
+
+    .quiz-option-btn:hover {
+      background: #faf5ff;
+      border-color: var(--primary-light);
+      color: var(--primary);
+    }
+
+    .quiz-option-btn.correct {
+      background: #dcfce7 !important;
+      border-color: #22c55e !important;
+      color: #15803d !important;
+    }
+
+    .quiz-option-btn.wrong {
+      background: #fee2e2 !important;
+      border-color: #ef4444 !important;
+      color: #b91c1c !important;
+    }
+
+    /* Compliment Generator Widget */
+    .compliment-box {
+      background: linear-gradient(135deg, #fdf4ff 0%, #fae8ff 100%);
+      border-radius: 20px;
+      padding: 2rem 1.6rem;
+      text-align: center;
+      margin-bottom: 1.4rem;
+      min-height: 110px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid #f5d0fe;
+    }
+
+    .compliment-text {
+      font-family: var(--font-handwriting);
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #86198f;
+      line-height: 1.4;
+    }
+
+    /* ==========================================================================
+       SECRET ROOM MODAL
+       ========================================================================== */
+    .secret-room-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: radial-gradient(circle at center, #2e1065 0%, #0f172a 100%);
+      z-index: 4000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+      overflow: hidden;
+    }
+
+    .secret-room-overlay.active {
+      display: flex;
+      animation: celestialOpen 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    @keyframes celestialOpen {
+      0% { opacity: 0; transform: scale(0.7); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+
+    .secret-room-container {
+      max-width: 680px;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 2px solid rgba(253, 224, 71, 0.5);
+      border-radius: 36px;
+      padding: 3.5rem 2.5rem;
+      text-align: center;
+      color: white;
+      box-shadow: 0 0 50px rgba(168, 85, 247, 0.4), inset 0 0 30px rgba(253, 224, 71, 0.2);
+      position: relative;
+      z-index: 5;
+    }
+
+    .secret-room-title {
+      font-family: var(--font-heading);
+      font-size: clamp(2.2rem, 5vw, 3.2rem);
+      font-weight: 700;
+      color: #fef08a;
+      text-shadow: 0 0 20px rgba(254, 240, 138, 0.6);
+      margin-bottom: 1.5rem;
+    }
+
+    .secret-room-hero-msg {
+      font-family: var(--font-heading);
+      font-size: 1.8rem;
+      font-weight: 600;
+      color: #fbcfe8;
+      margin-bottom: 1.5rem;
+    }
+
+    .secret-room-quote-box {
+      background: rgba(0, 0, 0, 0.25);
+      border-radius: 20px;
+      padding: 1.8rem;
+      margin-bottom: 2.5rem;
+      border: 1px dashed rgba(253, 224, 71, 0.4);
+    }
+
+    .secret-room-poem {
+      font-family: var(--font-handwriting);
+      font-size: 1.8rem;
+      line-height: 1.6;
+      color: #ffffff;
+    }
+
+    .secret-floating-star {
+      position: absolute;
+      color: #fef08a;
+      pointer-events: none;
+      animation: floatStar 3s ease-in-out infinite alternate;
+    }
+
+    /* ==========================================================================
+       GUESTBOOK SECTION
+       ========================================================================== */
+    .guestbook-section {
+      padding: 6rem 0;
+      position: relative;
+    }
+
+    .guestbook-card {
+      background: white;
+      border-radius: 32px;
+      padding: 3.5rem;
+      box-shadow: var(--shadow-md);
+      border: 1px solid rgba(226, 232, 240, 0.9);
+    }
+
+    .guestbook-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 3.5rem;
+    }
+
+    .guestbook-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .form-label {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    .form-input, .form-textarea {
+      padding: 0.85rem 1.2rem;
+      border-radius: 14px;
+      border: 1.5px solid rgba(226, 232, 240, 0.9);
+      background: #f8fafc;
+      font-size: 0.95rem;
+      transition: var(--transition-smooth);
+      outline: none;
+    }
+
+    .form-input:focus, .form-textarea:focus {
+      background: white;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(168, 85, 247, 0.15);
+    }
+
+    .form-textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    .emoji-picker-row {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .emoji-pick-btn {
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      font-size: 1.2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition-bounce);
+    }
+
+    .emoji-pick-btn:hover {
+      transform: scale(1.15);
+      background: #faf5ff;
+    }
+
+    .emoji-pick-btn.selected {
+      background: #f3e8ff;
+      border-color: var(--primary);
+      transform: scale(1.1);
+      box-shadow: 0 2px 8px rgba(168, 85, 247, 0.25);
+    }
+
+    .guestbook-messages-stream {
+      max-height: 480px;
+      overflow-y: auto;
+      padding-right: 0.8rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .guest-note-card {
+      background: #fffdfa;
+      border-radius: 18px;
+      padding: 1.2rem;
+      border: 1px solid #fef08a;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+      position: relative;
+      transition: var(--transition-smooth);
+    }
+
+    .guest-note-card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .guest-note-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 0.6rem;
+    }
+
+    .guest-author-info {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .guest-avatar {
+      font-size: 1.4rem;
+    }
+
+    .guest-name {
+      font-family: var(--font-heading);
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    .guest-date {
+      font-size: 0.78rem;
+      color: var(--text-light);
+    }
+
+    .guest-msg-text {
+      font-size: 0.95rem;
+      color: #334155;
+      line-height: 1.5;
+    }
+
+    /* ==========================================================================
+       FOOTER
+       ========================================================================== */
+    .site-footer {
+      background: white;
+      border-top: 1px solid rgba(226, 232, 240, 0.9);
+      padding: 4rem 0 2.5rem 0;
+      position: relative;
+    }
+
+    .footer-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 1.5rem;
+    }
+
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--font-heading);
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    .footer-tagline {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      max-width: 500px;
+    }
+
+    .footer-doodles-row {
+      display: flex;
+      gap: 1.5rem;
+      font-size: 1.5rem;
+    }
+
+    .footer-bottom-bar {
+      width: 100%;
+      border-top: 1px dashed rgba(226, 232, 240, 0.8);
+      padding-top: 1.8rem;
+      margin-top: 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+      font-size: 0.9rem;
+      color: var(--text-light);
+    }
+
+    .back-to-top-btn {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-weight: 600;
+      color: var(--primary);
+      transition: var(--transition-bounce);
+    }
+
+    .back-to-top-btn:hover {
+      transform: translateY(-3px);
+    }
+
+    /* ==========================================================================
+       CONFETTI CANVAS & CURSOR SPARKLES
+       ========================================================================== */
+    #confettiCanvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      pointer-events: none;
+      z-index: 5000;
+    }
+
+    .cursor-sparkle {
+      position: fixed;
+      pointer-events: none;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #fde047;
+      box-shadow: 0 0 10px #facc15;
+      z-index: 9999;
+      transform: translate(-50%, -50%);
+      animation: fadeOutSparkle 0.75s forwards;
+    }
+
+    @keyframes fadeOutSparkle {
+      0% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+      100% { transform: translate(-50%, -50%) scale(0) translateY(12px); opacity: 0; }
+    }
+
+    /* ==========================================================================
+       RESPONSIVE DESIGN (MEDIA QUERIES)
+       ========================================================================== */
+    @media (max-width: 1024px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        text-align: center;
+      }
+      .hero-desc {
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .hero-buttons {
+        justify-content: center;
+      }
+      .hero-badges {
+        justify-content: center;
+      }
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+      .studio-body {
+        grid-template-columns: 1fr;
+      }
+      .studio-toolbar {
+        border-right: none;
+        border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+      }
+      .funzone-grid {
+        grid-template-columns: 1fr;
+      }
+      .guestbook-grid {
+        grid-template-columns: 1fr;
+      }
+      .lightbox-container {
+        grid-template-columns: 1fr;
+      }
+      .lightbox-preview-area {
+        border-radius: 28px 28px 0 0;
+        min-height: 320px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .mobile-menu-toggle {
+        display: flex;
+      }
+      .nav-links {
+        position: fixed;
+        top: 75px;
+        left: 1.5rem;
+        right: 1.5rem;
+        background: white;
+        flex-direction: column;
+        padding: 1.5rem;
+        border-radius: 24px;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        display: none;
+        z-index: 1050;
+      }
+      .nav-links.open {
+        display: flex;
+      }
+      .nav-link {
+        width: 100%;
+        justify-content: center;
+        padding: 0.8rem;
+      }
+      .hero-artwork-composition {
+        height: 420px;
+      }
+      .composition-base {
+        width: 290px;
+        height: 380px;
+      }
+      .about-card, .guestbook-card {
+        padding: 2rem 1.5rem;
+      }
+      .creative-stats-grid {
+        grid-template-columns: 1fr;
+      }
+      .sketchbook-book {
+        padding: 2.5rem 1.5rem 1.5rem 2.2rem;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+      .cursor-sparkle {
+        display: none !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Confetti Canvas -->
+  <canvas id="confettiCanvas"></canvas>
+
+  <!-- ==========================================================================
+       NAVIGATION
+       ========================================================================== -->
+  <nav class="site-nav" id="mainNav" aria-label="Main Navigation">
+    <div class="container nav-inner">
+      <a href="#home" class="brand-logo" aria-label="Arnika's Art World Home">
+        <div class="brand-symbol">A</div>
+        <span class="brand-text">ARNIKA<span>'S ART</span></span>
+      </a>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home" class="nav-link active">🏠 Home</a></li>
+        <li><a href="#about" class="nav-link">👩‍🎨 About</a></li>
+        <li><a href="#gallery" class="nav-link">🖼️ Gallery</a></li>
+        <li><a href="#studio" class="nav-link">🎨 Studio</a></li>
+        <li><a href="#sketchbook" class="nav-link">📖 Sketchbook</a></li>
+        <li><a href="#funzone" class="nav-link">✨ Fun Zone</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <!-- Secret Easter Egg Trigger ⭐ -->
+        <button class="secret-star-btn" id="secretStarNav" title="A tiny magic star..." aria-label="Magic Star Easter Egg">⭐</button>
+        <!-- Sound Effect Toggle -->
+        <button class="audio-btn" id="audioToggleBtn" title="Toggle Sound Chimes" aria-label="Toggle Sound Effects">🔔</button>
+        <!-- Mobile Menu Toggle -->
+        <button class="mobile-menu-toggle" id="mobileMenuBtn" aria-label="Toggle Navigation Menu">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ==========================================================================
+       HERO SECTION
+       ========================================================================== -->
+  <section class="hero-section" id="home">
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <div class="hero-tag">
+          <span>✨</span> YOUNG ARTIST • DREAMER • CREATOR
+        </div>
+        <h1 class="hero-title">
+          Hi, I'm <span class="gradient-text">Arnika!</span>
+        </h1>
+        <div class="hero-subline">Welcome to my little art world.</div>
+        <p class="hero-desc">
+          A place where colors, imagination and tiny ideas become big adventures. Grab a brush, explore my gallery, or create your own magic today!
+        </p>
+        
+        <div class="hero-buttons">
+          <a href="#gallery" class="btn btn-primary">🎨 Explore My Art</a>
+          <a href="#studio" class="btn btn-secondary">🖌️ Start Drawing</a>
+        </div>
+
+        <div class="hero-badges">
+          <div class="hero-badge-item">
+            <div class="badge-icon">🌟</div>
+            <div>
+              <div class="badge-text-title">Artist Age</div>
+              <div class="badge-text-val">10 Years Old</div>
+            </div>
+          </div>
+          <div class="hero-badge-item">
+            <div class="badge-icon">🎒</div>
+            <div>
+              <div class="badge-text-title">Grade</div>
+              <div class="badge-text-val">Class 5</div>
+            </div>
+          </div>
+          <div class="hero-badge-item">
+            <div class="badge-icon">🎨</div>
+            <div>
+              <div class="badge-text-title">Masterpieces</div>
+              <div class="badge-text-val">12+ Artworks</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Artistic Hero Composition -->
+      <div class="hero-artwork-composition" id="heroComposition">
+        <div class="float-item float-item-note">Class 5 Artist ✏️</div>
+        
+        <div class="composition-base" id="heroBaseCard">
+          <div class="composition-canvas" id="heroHeroCanvas">
+            <!-- Colorful Hero SVG -->
+            <svg viewBox="0 0 320 400" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="skyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" stop-color="#bae6fd"/>
+                  <stop offset="50%" stop-color="#fbcfe8"/>
+                  <stop offset="100%" stop-color="#fef08a"/>
+                </linearGradient>
+                <radialGradient id="sunGlow" cx="50%" cy="50%" r="50%">
+                  <stop offset="0%" stop-color="#fef08a"/>
+                  <stop offset="100%" stop-color="#f59e0b" stop-opacity="0"/>
+                </radialGradient>
+              </defs>
+              <rect width="320" height="400" fill="url(#skyGrad)"/>
+              <!-- Rainbow Arcs -->
+              <circle cx="160" cy="220" r="130" fill="none" stroke="#f43f5e" stroke-width="10" stroke-opacity="0.8"/>
+              <circle cx="160" cy="220" r="120" fill="none" stroke="#fb923c" stroke-width="10" stroke-opacity="0.8"/>
+              <circle cx="160" cy="220" r="110" fill="none" stroke="#fde047" stroke-width="10" stroke-opacity="0.8"/>
+              <circle cx="160" cy="220" r="100" fill="none" stroke="#4ade80" stroke-width="10" stroke-opacity="0.8"/>
+              <circle cx="160" cy="220" r="90" fill="none" stroke="#38bdf8" stroke-width="10" stroke-opacity="0.8"/>
+              <circle cx="160" cy="220" r="80" fill="none" stroke="#a855f7" stroke-width="10" stroke-opacity="0.8"/>
+              <!-- Mountains -->
+              <polygon points="20,400 130,240 230,400" fill="#a7f3d0"/>
+              <polygon points="110,400 220,210 330,400" fill="#6ee7b7"/>
+              <!-- Castle in the distance -->
+              <rect x="145" y="170" width="30" height="40" fill="#ddd6fe"/>
+              <polygon points="140,170 160,135 180,170" fill="#ec4899"/>
+              <!-- Clouds -->
+              <circle cx="60" cy="110" r="30" fill="#ffffff" fill-opacity="0.9"/>
+              <circle cx="95" cy="100" r="38" fill="#ffffff" fill-opacity="0.9"/>
+              <circle cx="130" cy="110" r="28" fill="#ffffff" fill-opacity="0.9"/>
+              <circle cx="230" cy="140" r="32" fill="#ffffff" fill-opacity="0.9"/>
+              <circle cx="265" cy="130" r="40" fill="#ffffff" fill-opacity="0.9"/>
+              <!-- Smiling Sun -->
+              <circle cx="160" cy="70" r="35" fill="#fde047"/>
+              <circle cx="148" cy="65" r="4" fill="#78350f"/>
+              <circle cx="172" cy="65" r="4" fill="#78350f"/>
+              <path d="M 148 76 Q 160 88 172 76" stroke="#78350f" stroke-width="3" fill="none" stroke-linecap="round"/>
+              <circle cx="140" cy="74" r="5" fill="#f43f5e" fill-opacity="0.4"/>
+              <circle cx="180" cy="74" r="5" fill="#f43f5e" fill-opacity="0.4"/>
+              <!-- Foreground flowers -->
+              <circle cx="60" cy="370" r="14" fill="#f43f5e"/>
+              <circle cx="60" cy="370" r="6" fill="#fef08a"/>
+              <circle cx="110" cy="360" r="16" fill="#38bdf8"/>
+              <circle cx="110" cy="360" r="7" fill="#ffffff"/>
+              <circle cx="250" cy="365" r="15" fill="#fbbf24"/>
+              <circle cx="250" cy="365" r="6" fill="#f43f5e"/>
+              <circle cx="200" cy="380" r="14" fill="#ec4899"/>
+              <circle cx="200" cy="380" r="6" fill="#fef08a"/>
+            </svg>
+          </div>
+        </div>
+
+        <div class="float-item float-item-palette">
+          <svg width="60" height="48" viewBox="0 0 60 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M30 4C14 4 2 13 2 24C2 35 15 44 26 44C30 44 32 40 32 37C32 34 35 32 38 32H44C52 32 58 26 58 18C58 9 45 4 30 4Z" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="2"/>
+            <circle cx="14" cy="18" r="5" fill="#EF4444"/>
+            <circle cx="25" cy="12" r="5" fill="#F59E0B"/>
+            <circle cx="37" cy="12" r="5" fill="#10B981"/>
+            <circle cx="48" cy="18" r="5" fill="#3B82F6"/>
+            <circle cx="20" cy="30" r="5" fill="#8B5CF6"/>
+          </svg>
+        </div>
+
+        <div class="float-item float-item-brush">
+          <span>🖌️</span> Magic Palette
+        </div>
+
+        <div class="float-item float-item-butterfly">🦋</div>
+        <div class="float-item float-item-star1">✨</div>
+        <div class="float-item float-item-star2">⭐</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       ABOUT SECTION
+       ========================================================================== */
+  -->
+  <section class="about-section" id="about">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">👩‍🎨 Meet The Artist</div>
+        <h2 class="section-title">Meet <span class="highlight">Arnika</span> 👋</h2>
+        <p class="section-subtitle">
+          Ten years of curiosity, a million colorful dreams, and a sketchbook that never sleeps!
+        </p>
+      </div>
+
+      <div class="about-card">
+        <div class="about-grid">
+          <div class="about-avatar-wrapper">
+            <div class="about-avatar-card">
+              <div class="avatar-inner">
+                <div class="avatar-drawing">
+                  <!-- Cute Artist Avatar SVG -->
+                  <svg viewBox="0 0 140 140" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="70" cy="70" r="66" fill="#fdf2f8" stroke="#fbcfe8" stroke-width="3"/>
+                    <!-- Hair -->
+                    <circle cx="70" cy="65" r="45" fill="#475569"/>
+                    <ellipse cx="38" cy="72" rx="14" ry="24" fill="#475569"/>
+                    <ellipse cx="102" cy="72" rx="14" ry="24" fill="#475569"/>
+                    <!-- Face -->
+                    <ellipse cx="70" cy="72" rx="34" ry="32" fill="#fed7aa"/>
+                    <!-- Bangs -->
+                    <path d="M 38 65 Q 70 50 102 65 Q 70 42 38 65 Z" fill="#334155"/>
+                    <!-- Eyes with sparkles -->
+                    <ellipse cx="58" cy="72" rx="5" ry="6" fill="#1e293b"/>
+                    <ellipse cx="82" cy="72" rx="5" ry="6" fill="#1e293b"/>
+                    <circle cx="56" cy="70" r="2" fill="#ffffff"/>
+                    <circle cx="80" cy="70" r="2" fill="#ffffff"/>
+                    <!-- Cute Blush -->
+                    <ellipse cx="50" cy="80" rx="6" ry="3" fill="#f43f5e" fill-opacity="0.4"/>
+                    <ellipse cx="90" cy="80" rx="6" ry="3" fill="#f43f5e" fill-opacity="0.4"/>
+                    <!-- Smile -->
+                    <path d="M 64 80 Q 70 88 76 80" stroke="#78350f" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+                    <!-- Artist Beret Hat -->
+                    <ellipse cx="70" cy="42" rx="36" ry="14" fill="#a855f7"/>
+                    <circle cx="70" cy="30" r="4" fill="#ec4899"/>
+                  </svg>
+                </div>
+                <div class="avatar-badge-class">Class 5 • Junior Artist</div>
+                <div class="avatar-name">Arnika</div>
+                <div class="avatar-quote">"Imagination has no limits!"</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="about-details">
+            <h3 class="about-heading">Colors, Smiles & Big Ideas ✨</h3>
+            <div class="about-bio-box" id="artistBioBox">
+              <p id="artistBioText">
+                "Hi! I'm Arnika. I love drawing, exploring colors and turning my imagination into pictures. When I'm not sketching, I like creating fun stories about magical animals and secret treehouses!"
+              </p>
+              <div class="editable-hint">
+                <span>✏️</span> Click bio to edit your own words anytime!
+              </div>
+            </div>
+
+            <div class="creative-stats-grid">
+              <div class="creative-stat-item">
+                <div class="stat-emoji">🎨</div>
+                <div>
+                  <div class="stat-title">Drawing Lover</div>
+                  <div class="stat-desc">Always carrying a sketchbook wherever I go</div>
+                </div>
+              </div>
+
+              <div class="creative-stat-item">
+                <div class="stat-emoji">🌈</div>
+                <div>
+                  <div class="stat-title">Color Explorer</div>
+                  <div class="stat-desc">Mixing pastels, neons & magical sunset tones</div>
+                </div>
+              </div>
+
+              <div class="creative-stat-item">
+                <div class="stat-emoji">✨</div>
+                <div>
+                  <div class="stat-title">Big Imagination</div>
+                  <div class="stat-desc">Castles, space pets & gentle friendly dragons</div>
+                </div>
+              </div>
+
+              <div class="creative-stat-item">
+                <div class="stat-emoji">💡</div>
+                <div>
+                  <div class="stat-title">Creative Thinker</div>
+                  <div class="stat-desc">Finding wonder in every tiny ordinary moment</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       ART GALLERY SECTION
+       ========================================================================== -->
+  <section class="gallery-section" id="gallery">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">🖼️ The Collection</div>
+        <h2 class="section-title">Arnika's <span class="highlight">Art Gallery</span></h2>
+        <p class="section-subtitle">
+          Step into a vibrant exhibition of handcrafted dreams, nature adventures, and cute companions.
+        </p>
+      </div>
+
+      <!-- Category Filter Tabs -->
+      <div class="gallery-filter-bar" id="galleryFilters">
+        <button class="filter-btn active" data-category="All">
+          All <span class="count-badge" id="countAll">12</span>
+        </button>
+        <button class="filter-btn" data-category="Nature">
+          Nature <span class="count-badge" id="countNature">4</span>
+        </button>
+        <button class="filter-btn" data-category="Animals">
+          Animals <span class="count-badge" id="countAnimals">4</span>
+        </button>
+        <button class="filter-btn" data-category="Fantasy">
+          Fantasy <span class="count-badge" id="countFantasy">4</span>
+        </button>
+        <button class="filter-btn" data-category="Cute">
+          Cute <span class="count-badge" id="countCute">4</span>
+        </button>
+        <button class="filter-btn" data-category="My World">
+          My World <span class="count-badge" id="countMyWorld">3</span>
+        </button>
+        <button class="filter-btn" data-category="Favorites">
+          ❤️ Favorites <span class="count-badge" id="countFavorites">0</span>
+        </button>
+      </div>
+
+      <!-- Responsive Masonry / Grid Cards -->
+      <div class="gallery-grid" id="galleryGrid">
+        <!-- Rendered dynamically by JavaScript with high-detail SVGs -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery Lightbox Modal -->
+  <div class="lightbox-modal" id="lightboxModal" role="dialog" aria-modal="true" aria-label="Artwork Preview">
+    <div class="lightbox-container">
+      <button class="lightbox-close-btn" id="lightboxCloseBtn" title="Close (ESC)" aria-label="Close Preview">&times;</button>
+      <button class="lightbox-nav-btn lightbox-nav-prev" id="lightboxPrevBtn" title="Previous (←)" aria-label="Previous Artwork">&#8592;</button>
+      <button class="lightbox-nav-btn lightbox-nav-next" id="lightboxNextBtn" title="Next (→)" aria-label="Next Artwork">&#8594;</button>
+
+      <div class="lightbox-preview-area" id="lightboxPreviewArea">
+        <!-- Injected dynamically -->
+      </div>
+
+      <div class="lightbox-details-area">
+        <div>
+          <div class="artwork-badge-category" id="lightboxCategory" style="position: static; display: inline-block; margin-bottom: 0.8rem;">Category</div>
+          <h2 class="section-title" id="lightboxTitle" style="text-align: left; font-size: 2rem; margin-bottom: 0.5rem;">Artwork Title</h2>
+          <div class="artwork-date" id="lightboxDate" style="margin-bottom: 1.2rem;">Date</div>
+          <p class="artwork-desc" id="lightboxDesc" style="font-size: 1.05rem; line-height: 1.7;">Description</p>
+        </div>
+
+        <div style="display: flex; gap: 1rem; align-items: center; margin-top: 2rem;">
+          <button class="btn btn-secondary" id="lightboxFavBtn" style="padding: 0.75rem 1.4rem;">
+            <span id="lightboxFavIcon">🤍</span> <span id="lightboxFavText">Add to Favorites</span>
+          </button>
+          <button class="btn btn-primary" id="lightboxDrawSimilarBtn">
+            🎨 Draw in Studio
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       INTERACTIVE DRAWING STUDIO
+       ========================================================================== -->
+  <section class="studio-section" id="studio">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">🎨 Creative Playground</div>
+        <h2 class="section-title">Arnika's <span class="highlight">Magic Drawing Studio</span></h2>
+        <p class="section-subtitle">
+          Pick your brush, select a magical rainbow stroke, and paint your very own masterpiece!
+        </p>
+      </div>
+
+      <div class="studio-card">
+        <!-- Studio Header -->
+        <div class="studio-header">
+          <div style="display: flex; align-items: center; gap: 0.8rem;">
+            <span style="font-size: 1.5rem;">🖌️</span>
+            <div>
+              <div style="font-family: var(--font-heading); font-size: 1.2rem; font-weight: 700; color: var(--text-main);">Canvas Studio</div>
+              <div style="font-size: 0.8rem; color: var(--text-muted);">Pointer & Touch Enabled • High DPI</div>
+            </div>
+          </div>
+
+          <div class="studio-active-challenge" id="studioChallengeBadge">
+            <span>🎯</span> <span id="studioChallengeText">Inspiration: Draw a rainbow city!</span>
+          </div>
+        </div>
+
+        <div class="studio-body">
+          <!-- Studio Toolbar -->
+          <div class="studio-toolbar">
+            <!-- Basic Tools -->
+            <div>
+              <div class="tool-group-title">Basic Tools</div>
+              <div class="tools-grid">
+                <button class="tool-btn active" data-tool="pencil" title="Fine Pencil">
+                  <span class="tool-icon">✏️</span>
+                  <span>Pencil</span>
+                </button>
+                <button class="tool-btn" data-tool="brush" title="Soft Watercolor Brush">
+                  <span class="tool-icon">🖌️</span>
+                  <span>Brush</span>
+                </button>
+                <button class="tool-btn" data-tool="marker" title="Bold Marker">
+                  <span class="tool-icon">🖍️</span>
+                  <span>Marker</span>
+                </button>
+                <button class="tool-btn" data-tool="eraser" title="Clean Eraser">
+                  <span class="tool-icon">🧽</span>
+                  <span>Eraser</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Magic Brushes -->
+            <div>
+              <div class="tool-group-title">Magic Brushes ✨</div>
+              <div class="magic-brushes-grid">
+                <button class="magic-btn" data-tool="rainbow" title="Rainbow shifting stroke">
+                  <span style="font-size: 1.2rem;">🌈</span>
+                  <span>Rainbow</span>
+                </button>
+                <button class="magic-btn" data-tool="sparkle" title="Golden sparkles trail">
+                  <span style="font-size: 1.2rem;">✨</span>
+                  <span>Sparkle</span>
+                </button>
+                <button class="magic-btn" data-tool="stars" title="Stamp cute glowing stars">
+                  <span style="font-size: 1.2rem;">⭐</span>
+                  <span>Stars</span>
+                </button>
+                <button class="magic-btn" data-tool="hearts" title="Stamp floating hearts">
+                  <span style="font-size: 1.2rem;">❤️</span>
+                  <span>Hearts</span>
+                </button>
+                <button class="magic-btn" data-tool="flowers" title="Stamp 5-petal blossoms">
+                  <span style="font-size: 1.2rem;">🌸</span>
+                  <span>Flowers</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Color Palette -->
+            <div>
+              <div class="tool-group-title">Art Palette</div>
+              <div class="color-swatches-grid" id="colorSwatches">
+                <div class="color-swatch active" style="background-color: #8b5cf6;" data-color="#8b5cf6" title="Lavender"></div>
+                <div class="color-swatch" style="background-color: #ec4899;" data-color="#ec4899" title="Rose Pink"></div>
+                <div class="color-swatch" style="background-color: #ef4444;" data-color="#ef4444" title="Cherry Red"></div>
+                <div class="color-swatch" style="background-color: #f97316;" data-color="#f97316" title="Sunset Orange"></div>
+                <div class="color-swatch" style="background-color: #facc15;" data-color="#facc15" title="Sunny Yellow"></div>
+                <div class="color-swatch" style="background-color: #22c55e;" data-color="#22c55e" title="Meadow Green"></div>
+                <div class="color-swatch" style="background-color: #06b6d4;" data-color="#06b6d4" title="Turquoise"></div>
+                <div class="color-swatch" style="background-color: #3b82f6;" data-color="#3b82f6" title="Sky Blue"></div>
+                <div class="color-swatch" style="background-color: #6366f1;" data-color="#6366f1" title="Indigo"></div>
+                <div class="color-swatch" style="background-color: #a855f7;" data-color="#a855f7" title="Violet"></div>
+                <div class="color-swatch" style="background-color: #78350f;" data-color="#78350f" title="Earth Brown"></div>
+                <div class="color-swatch" style="background-color: #1e293b;" data-color="#1e293b" title="Midnight Black"></div>
+              </div>
+
+              <!-- Custom Color Picker -->
+              <div class="custom-color-picker-wrapper">
+                <input type="color" id="customColorPicker" value="#8b5cf6" class="custom-color-input" title="Choose Custom Color">
+                <span style="font-size: 0.85rem; font-weight: 600; color: var(--text-muted);">Custom Color Picker</span>
+              </div>
+            </div>
+
+            <!-- Brush Size Slider -->
+            <div class="slider-control">
+              <div class="slider-label-row">
+                <span>Brush Size</span>
+                <span id="brushSizeVal">12px</span>
+              </div>
+              <input type="range" id="brushSizeSlider" min="2" max="60" value="12" class="slider-input">
+              <div class="brush-preview-box">
+                <div class="brush-preview-dot" id="brushPreviewDot" style="width: 12px; height: 12px;"></div>
+              </div>
+            </div>
+
+            <!-- Opacity Slider -->
+            <div class="slider-control">
+              <div class="slider-label-row">
+                <span>Opacity</span>
+                <span id="opacityVal">100%</span>
+              </div>
+              <input type="range" id="opacitySlider" min="10" max="100" value="100" class="slider-input">
+            </div>
+          </div>
+
+          <!-- Studio Canvas Area -->
+          <div class="studio-canvas-container" id="canvasContainer">
+            <!-- Canvas Floating Actions -->
+            <div class="studio-action-bar">
+              <button class="studio-btn" id="undoBtn" title="Undo (Ctrl+Z)" disabled>
+                <span>↩️</span> Undo
+              </button>
+              <button class="studio-btn" id="redoBtn" title="Redo (Ctrl+Y)" disabled>
+                <span>↪️</span> Redo
+              </button>
+              <button class="studio-btn" id="clearBtn" title="Clear Canvas">
+                <span>🗑️</span> Clear
+              </button>
+              <button class="studio-btn studio-btn-primary" id="downloadBtn" title="Save Drawing to your computer">
+                <span>💾</span> Download Masterpiece
+              </button>
+            </div>
+
+            <canvas id="drawingCanvas" class="drawing-canvas-board"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Clear Confirmation Dialog -->
+  <div class="confirm-modal-overlay" id="clearConfirmModal">
+    <div class="confirm-modal-card">
+      <div class="confirm-modal-icon">🧼</div>
+      <h3 class="confirm-modal-title">Clear Your Canvas?</h3>
+      <p class="confirm-modal-desc">
+        Are you sure you want to start a brand new drawing? All unsaved strokes will be cleared!
+      </p>
+      <div class="confirm-modal-actions">
+        <button class="btn btn-secondary" id="cancelClearBtn">Keep Drawing</button>
+        <button class="btn btn-primary" id="confirmClearBtn" style="background: #ef4444;">Yes, Clear Canvas</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       DRAWING CHALLENGES
+       ========================================================================== -->
+  <section class="challenges-section" id="challenges">
+    <div class="container">
+      <div class="challenge-banner-card">
+        <div class="challenge-banner-content">
+          <div class="section-tag" style="background: white;">🎯 Imagination Sparks</div>
+          <h2 class="section-title">Today's <span class="highlight">Drawing Challenge</span></h2>
+          <p class="section-subtitle">
+            Need an exciting idea? Spin the wheel and accept a creative mission!
+          </p>
+
+          <div class="challenge-display-pill">
+            <div class="current-challenge-text" id="challengeDisplay">
+              "Draw a magical castle 🏰"
+            </div>
+          </div>
+
+          <div class="challenge-actions-row">
+            <button class="btn btn-secondary" id="newChallengeBtn">
+              <span>✨</span> New Challenge
+            </button>
+            <button class="btn btn-primary" id="startChallengeBtn">
+              <span>🎨</span> Start Drawing This!
+            </button>
+            <button class="btn btn-secondary" id="completeChallengeBtn">
+              <span>✅</span> Mark as Completed
+            </button>
+          </div>
+
+          <div class="completed-challenges-tracker">
+            <span>🏆 Completed Challenges:</span>
+            <span id="completedCount" style="font-weight: 800; font-size: 1.1rem; color: #a855f7;">0</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       ACHIEVEMENTS SYSTEM
+       ========================================================================== -->
+  <section class="achievements-section" id="achievements">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">⭐ Trophy Shelf</div>
+        <h2 class="section-title">Arnika's <span class="highlight">Creative Badges</span></h2>
+        <p class="section-subtitle">
+          Unlock badges as you paint, test magical brushes, and discover secret wonders!
+        </p>
+      </div>
+
+      <div class="achievements-grid" id="achievementsGrid">
+        <!-- Rendered by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Celebration Popup Modal -->
+  <div class="achievement-popup-modal" id="achievementPopupModal">
+    <div class="achievement-popup-box">
+      <div class="celebrate-icon-large" id="celebrateIcon">🎉</div>
+      <div class="section-tag" style="background: #fef08a; color: #854d0e; border: none; margin-bottom: 0.8rem;">BADGE UNLOCKED!</div>
+      <h3 class="section-title" id="celebrateTitle" style="font-size: 2.2rem; margin-bottom: 0.5rem;">First Creation</h3>
+      <p class="section-subtitle" id="celebrateDesc" style="margin-bottom: 2rem;">You drew your very first stroke in the magic studio!</p>
+      <button class="btn btn-primary" id="celebrateCloseBtn" style="padding: 0.85rem 2.2rem;">
+        🌟 Awesome, Keep Going!
+      </button>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       DIGITAL SKETCHBOOK
+       ========================================================================== */
+  -->
+  <section class="sketchbook-section" id="sketchbook">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">📖 Handmade Journal</div>
+        <h2 class="section-title">The Magical <span class="highlight">Sketchbook</span></h2>
+        <p class="section-subtitle">
+          Turn the pages of Arnika's personal journal to discover drawing wishlists, favorite palettes, and sweet thoughts.
+        </p>
+      </div>
+
+      <div class="sketchbook-wrapper">
+        <div class="sketchbook-book">
+          <div class="sketchbook-header">
+            <div class="sketchbook-title" id="sketchbookPageTitle">Things I Want To Draw</div>
+            <div class="sketchbook-page-indicator" id="sketchbookPageIndicator">Page 1 of 4</div>
+          </div>
+
+          <div class="sketchbook-page-content">
+            <!-- PAGE 1: Things I Want to Draw (Interactive Checklist) -->
+            <div class="sketchbook-page active" id="sketchPage1">
+              <div class="todo-list-wrapper" id="todoList">
+                <!-- Dynamically rendered -->
+              </div>
+              <div class="todo-input-row">
+                <input type="text" id="newTodoInput" class="todo-input-text" placeholder="Add a new idea to draw (e.g. Baby Penguin in scarf 🐧)...">
+                <button class="btn btn-primary" id="addTodoBtn" style="padding: 0.6rem 1.4rem;">Add Idea</button>
+              </div>
+            </div>
+
+            <!-- PAGE 2: My Favorite Colors -->
+            <div class="sketchbook-page" id="sketchPage2">
+              <p style="font-family: var(--font-handwriting); font-size: 1.35rem; color: #78350f;">
+                "Colors carry feelings! Here are the shades that make my heart happy every time I open my pencil box."
+              </p>
+              <div class="fav-colors-grid">
+                <div class="fav-color-card">
+                  <div class="fav-color-chip" style="background: #fbcfe8;"></div>
+                  <div class="fav-color-name">Cotton Candy</div>
+                </div>
+                <div class="fav-color-card">
+                  <div class="fav-color-chip" style="background: #c4b5fd;"></div>
+                  <div class="fav-color-name">Dream Lavender</div>
+                </div>
+                <div class="fav-color-card">
+                  <div class="fav-color-chip" style="background: #fde047;"></div>
+                  <div class="fav-color-name">Morning Sunlight</div>
+                </div>
+                <div class="fav-color-card">
+                  <div class="fav-color-chip" style="background: #6ee7b7;"></div>
+                  <div class="fav-color-name">Mint Sprout</div>
+                </div>
+                <div class="fav-color-card">
+                  <div class="fav-color-chip" style="background: #7dd3fc;"></div>
+                  <div class="fav-color-name">Sky Blue Ribbon</div>
+                </div>
+                <div class="fav-color-card">
+                  <div class="fav-color-chip" style="background: #fdba74;"></div>
+                  <div class="fav-color-name">Peach Smoothie</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- PAGE 3: My Drawing Ideas -->
+            <div class="sketchbook-page" id="sketchPage3">
+              <p style="font-family: var(--font-handwriting); font-size: 1.35rem; color: #78350f;">
+                "Crazy fun brainstorms waiting for a rainy Saturday afternoon!"
+              </p>
+              <div class="notes-board-grid">
+                <div class="sticky-note-card" style="background: #fef08a; transform: rotate(-2deg);">
+                  ☁️ A bakery in the clouds where cupcakes float like balloons.
+                </div>
+                <div class="sticky-note-card" style="background: #fbcfe8; transform: rotate(3deg);">
+                  🐢 A giant turtle with a cozy botanical greenhouse on its shell!
+                </div>
+                <div class="sticky-note-card" style="background: #bae6fd; transform: rotate(-1deg);">
+                  🚀 A treehouse rocket ship powered by glowing stardust.
+                </div>
+                <div class="sticky-note-card" style="background: #bbf7d0; transform: rotate(2deg);">
+                  🐱 A detective cat with a magnifying glass solving missing yarn cases.
+                </div>
+              </div>
+            </div>
+
+            <!-- PAGE 4: My Little Notes -->
+            <div class="sketchbook-page" id="sketchPage4">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                <p style="font-family: var(--font-handwriting); font-size: 1.35rem; color: #78350f;">
+                  "Sticky reminders to keep my creative heart smiling."
+                </p>
+                <button class="btn btn-secondary" id="addStickyNoteBtn" style="padding: 0.4rem 1rem; font-size: 0.85rem;">
+                  ➕ Pin New Note
+                </button>
+              </div>
+              <div class="notes-board-grid" id="stickyNotesContainer">
+                <!-- Dynamically loaded from localStorage -->
+              </div>
+            </div>
+          </div>
+
+          <!-- Sketchbook Footer Nav -->
+          <div class="sketchbook-footer-nav">
+            <button class="btn btn-secondary" id="sketchPrevBtn">
+              <span>←</span> Previous Page
+            </button>
+            <div style="font-size: 0.85rem; color: #b45309; font-weight: 600;">
+              ✨ Notebook of Arnika
+            </div>
+            <button class="btn btn-primary" id="sketchNextBtn">
+              Next Page <span>→</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       FUN ZONE
+       ========================================================================== -->
+  <section class="funzone-section" id="funzone">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">✨ Creative Minigames</div>
+        <h2 class="section-title">Arnika's <span class="highlight">Fun Zone</span></h2>
+        <p class="section-subtitle">
+          Mix colors like a scientist, generate wacky drawing prompts, test your art quiz knowledge, and receive sweet compliments!
+        </p>
+      </div>
+
+      <div class="funzone-grid">
+        <!-- 1. Color Mixer -->
+        <div class="fun-card">
+          <div>
+            <div class="fun-card-header">
+              <div class="fun-card-icon">🧪</div>
+              <h3 class="fun-card-title">Color Potion Mixer</h3>
+            </div>
+            <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 1.2rem;">
+              Click either color flask to blend two shades and discover their magical hybrid hue!
+            </p>
+
+            <div class="color-mixer-widget">
+              <div class="mixer-selectors-row">
+                <div class="mixer-swatch-box" id="mixerBoxA" style="background-color: #3b82f6;" title="Pick First Color">
+                  <input type="color" id="mixerColorA" value="#3b82f6">
+                </div>
+                <div class="mixer-plus">+</div>
+                <div class="mixer-swatch-box" id="mixerBoxB" style="background-color: #facc15;" title="Pick Second Color">
+                  <input type="color" id="mixerColorB" value="#facc15">
+                </div>
+              </div>
+
+              <div class="mixer-result-box">
+                <div class="mixer-result-preview" id="mixerResultPreview" style="background-color: #7ece86;"></div>
+                <div class="mixer-result-name" id="mixerResultName">Meadow Lime</div>
+                <div id="mixerResultHex" style="font-size: 0.85rem; color: #64748b; font-weight: 600;">#7ece86</div>
+              </div>
+            </div>
+          </div>
+          <button class="btn btn-secondary" id="mixerRandomBtn" style="margin-top: 1.5rem; width: 100%;">
+            🎲 Surprise Me With Colors
+          </button>
+        </div>
+
+        <!-- 2. Random Drawing Idea Generator -->
+        <div class="fun-card">
+          <div>
+            <div class="fun-card-header">
+              <div class="fun-card-icon">💡</div>
+              <h3 class="fun-card-title">Random Idea Mashup</h3>
+            </div>
+            <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 1.2rem;">
+              Mash 3 crazy concepts together for infinite creative inspiration!
+            </p>
+
+            <div class="mashup-display-box">
+              <div class="mashup-idea-text" id="mashupText">
+                "A fluffy panda wearing astronaut boots eating cotton candy on Saturn's rings 🪐"
+              </div>
+            </div>
+          </div>
+          <div style="display: flex; gap: 0.8rem; margin-top: 1.5rem;">
+            <button class="btn btn-secondary" id="rerollMashupBtn" style="flex: 1;">
+              🎲 Spin New Idea
+            </button>
+            <button class="btn btn-primary" id="drawMashupBtn" style="flex: 1;">
+              🎨 Draw This
+            </button>
+          </div>
+        </div>
+
+        <!-- 3. Art Quiz -->
+        <div class="fun-card">
+          <div>
+            <div class="fun-card-header">
+              <div class="fun-card-icon">🧩</div>
+              <h3 class="fun-card-title">Little Artist Quiz</h3>
+            </div>
+            <div id="quizContainer" class="quiz-container">
+              <div style="display: flex; justify-content: space-between; font-size: 0.85rem; font-weight: 700; color: var(--primary);">
+                <span id="quizProgress">Question 1 of 5</span>
+                <span id="quizScoreText">Score: 0</span>
+              </div>
+              <div class="quiz-question-text" id="quizQuestion">
+                What do you get when you mix Red and Yellow paint?
+              </div>
+              <div class="quiz-options-list" id="quizOptions">
+                <!-- Dynamically loaded -->
+              </div>
+            </div>
+          </div>
+          <button class="btn btn-secondary" id="restartQuizBtn" style="margin-top: 1.5rem; width: 100%; display: none;">
+            🔄 Play Quiz Again
+          </button>
+        </div>
+
+        <!-- 4. Compliment Generator -->
+        <div class="fun-card">
+          <div>
+            <div class="fun-card-header">
+              <div class="fun-card-icon">💖</div>
+              <h3 class="fun-card-title">Artist Pep Talk</h3>
+            </div>
+            <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 1.2rem;">
+              A pocket full of encouragement for whenever you need a creative boost!
+            </p>
+
+            <div class="compliment-box">
+              <div class="compliment-text" id="complimentText">
+                "Your imagination is amazing! Every stroke you paint brings a little more joy into the world. ✨"
+              </div>
+            </div>
+          </div>
+          <button class="btn btn-primary" id="newComplimentBtn" style="margin-top: 1.5rem; width: 100%;">
+            💌 Give Me Another Sparkle
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SECRET ROOM MODAL (EASTER EGG)
+       ========================================================================== -->
+  <div class="secret-room-overlay" id="secretRoomOverlay">
+    <div class="secret-room-container">
+      <div style="font-size: 4rem; margin-bottom: 1rem;">✨ 🏰 ✨</div>
+      <h2 class="secret-room-title">✨ SECRET ART ROOM ✨</h2>
+      <div class="secret-room-hero-msg">Arnika, you found the secret room!</div>
+
+      <div class="secret-room-quote-box">
+        <p class="secret-room-poem">
+          "Keep drawing.<br>
+          Keep imagining.<br>
+          Keep creating.<br>
+          Your ideas can make the world more colorful. ❤️"
+        </p>
+      </div>
+
+      <button class="btn btn-primary" id="closeSecretRoomBtn" style="background: linear-gradient(135deg, #f59e0b, #ec4899); font-size: 1.1rem; padding: 0.9rem 2.2rem;">
+        🌟 Back to My Art World
+      </button>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       GUESTBOOK SECTION
+       ========================================================================== -->
+  <section class="guestbook-section" id="guestbook">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">💌 Friendly Notes</div>
+        <h2 class="section-title">Leave Some <span class="highlight">Love</span></h2>
+        <p class="section-subtitle">
+          Say hello to Arnika, leave an encouraging word, or pick your favorite emoji!
+        </p>
+      </div>
+
+      <div class="guestbook-card">
+        <div class="guestbook-grid">
+          <!-- Form -->
+          <form class="guestbook-form" id="guestbookForm">
+            <div class="form-group">
+              <label class="form-label" for="guestName">Your Name</label>
+              <input type="text" id="guestName" class="form-input" placeholder="e.g. Aunt Sarah or Classmate Alex" required>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Pick Your Emoji Stamp</label>
+              <div class="emoji-picker-row" id="emojiPickerRow">
+                <button type="button" class="emoji-pick-btn selected" data-emoji="🎨">🎨</button>
+                <button type="button" class="emoji-pick-btn" data-emoji="🦄">🦄</button>
+                <button type="button" class="emoji-pick-btn" data-emoji="🌟">🌟</button>
+                <button type="button" class="emoji-pick-btn" data-emoji="💖">💖</button>
+                <button type="button" class="emoji-pick-btn" data-emoji="🚀">🚀</button>
+                <button type="button" class="emoji-pick-btn" data-emoji="🌻">🌻</button>
+                <button type="button" class="emoji-pick-btn" data-emoji="🐱">🐱</button>
+                <button type="button" class="emoji-pick-btn" data-emoji="🌈">🌈</button>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="guestMsg">Your Cheerful Message</label>
+              <textarea id="guestMsg" class="form-textarea" placeholder="Your drawings made me smile today because..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="margin-top: 0.5rem;">
+              💌 Post Message
+            </button>
+          </form>
+
+          <!-- Messages Stream -->
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+              <h3 style="font-family: var(--font-heading); font-size: 1.3rem; color: var(--text-main);">
+                Guestbook Notes (<span id="guestbookCount">3</span>)
+              </h3>
+              <button id="resetGuestbookBtn" style="font-size: 0.75rem; color: #94a3b8; text-decoration: underline;">
+                Reset Demo Notes
+              </button>
+            </div>
+
+            <div class="guestbook-messages-stream" id="guestbookStream">
+              <!-- Dynamically populated -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       FOOTER
+       ========================================================================== -->
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <a href="#home" class="footer-brand">
+        <div class="brand-symbol">A</div>
+        <span>ARNIKA'S ART WORLD</span>
+      </a>
+
+      <p class="footer-tagline">
+        Made with imagination, colors & lots of creativity ✨
+      </p>
+
+      <div class="footer-doodles-row">
+        <span>🎨</span>
+        <span>🌈</span>
+        <span>✨</span>
+        <span>🦋</span>
+        <span>🌸</span>
+        <span>🚀</span>
+      </div>
+
+      <div class="footer-bottom-bar">
+        <div>© Arnika's Art World • Where imagination becomes art.</div>
+        <a href="#home" class="back-to-top-btn" id="backToTopBtn">
+          <span>↑</span> Back to Top
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       JAVASCRIPT
+       ========================================================================== -->
+  <script>
+    /* ==========================================================================
+       ARTWORKS DATA (12 HIGH-DETAIL EMBEDDED SVGs)
+       ========================================================================== */
+    const ARTWORKS = [
+      {
+        id: 1,
+        title: "Rainbow Garden",
+        category: "Nature",
+        date: "Spring 2026",
+        description: "A joyful blooming valley under a radiant rainbow bridge, full of giant sunflowers and gentle sunshine.",
+        svg: `<svg viewBox="0 0 320 240" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="g1" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#bae6fd"/><stop offset="100%" stop-color="#fef08a"/></linearGradient>
+          </defs>
+          <rect width="320" height="240" fill="url(#g1)"/>
+          <!-- Rainbow -->
+          <circle cx="160" cy="180" r="100" fill="none" stroke="#f43f5e" stroke-width="8"/>
+          <circle cx="160" cy="180" r="92" fill="none" stroke="#fb923c" stroke-width="8"/>
+          <circle cx="160" cy="180" r="84" fill="none" stroke="#facc15" stroke-width="8"/>
+          <circle cx="160" cy="180" r="76" fill="none" stroke="#4ade80" stroke-width="8"/>
+          <circle cx="160" cy="180" r="68" fill="none" stroke="#38bdf8" stroke-width="8"/>
+          <circle cx="160" cy="180" r="60" fill="none" stroke="#a855f7" stroke-width="8"/>
+          <!-- Hills -->
+          <path d="M 0 190 Q 80 150 160 190 T 320 180 L 320 240 L 0 240 Z" fill="#86efac"/>
+          <path d="M 0 210 Q 120 180 240 215 T 320 210 L 320 240 L 0 240 Z" fill="#4ade80"/>
+          <!-- Flowers -->
+          <circle cx="50" cy="205" r="12" fill="#ec4899"/><circle cx="50" cy="205" r="5" fill="#fef08a"/>
+          <circle cx="100" cy="215" r="14" fill="#f59e0b"/><circle cx="100" cy="215" r="6" fill="#ffffff"/>
+          <circle cx="180" cy="210" r="15" fill="#ef4444"/><circle cx="180" cy="210" r="6" fill="#fef08a"/>
+          <circle cx="260" cy="205" r="13" fill="#8b5cf6"/><circle cx="260" cy="205" r="5" fill="#ffffff"/>
+          <!-- Sun -->
+          <circle cx="45" cy="45" r="22" fill="#fde047"/>
+        </svg>`
+      },
+      {
+        id: 2,
+        title: "Little Bunny",
+        category: "Animals",
+        date: "March 2026",
+        description: "A fluffy white rabbit wearing a tiny pink beret holding a carrot paintbrush in a meadow of four-leaf clovers.",
+        svg: `<svg viewBox="0 0 320 240" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+          <rect width="320" height="240" fill="#fbcfe8"/>
+          <!-- Meadow -->
+          <path d="M 0 170 Q 160 140 320 170 L 320 240 L 0 240 Z" fill="#bbf7d0"/>
+          <!-- Bunny Ears -->
+          <ellipse cx="140" cy="70" rx="14" ry="40" fill="#ffffff"/><ellipse cx="140" cy="70" rx="7" ry="28" fill="#f472b6"/>
+          <ellipse cx="180" cy="70" rx="14" ry="40" fill="#ffffff"/><ellipse cx="180" cy="70" rx="7" ry="28" fill="#f472b6"/>
+          <!-- Bunny Head & Body -->
+          <ellipse cx="160" cy="180" rx="45" ry="40" fill="#ffffff"/>
+          <circle cx="160" cy="125" r="38" fill="#ffffff"/>
+          <!-- Face -->
+          <ellipse cx="148" cy="120" rx="4" ry="6" fill="#1e293b"/>
+          <ellipse cx="172" cy="120" rx="4" ry="6" fill="#1e293b"/>
+          <polygon points="156,128 164,128 160,134" fill="#f472b6"/>
+          <path d="M 154 135 Q 160 142 166 135" stroke="#475569" stroke-width="2" fill="none"/>
+          <circle cx="138" cy="128" r="5" fill="#fbcfe8"/>
+          <circle cx="182" cy="128" r="5" fill="#fbcfe8"/>
+          <!-- Whiskers -->
+          <line x1="130" y1="126" x2="110" y2="122" stroke="#cbd5e1" stroke-width="2"/>
+          <line x1="130" y1="132" x2="110" y2="134" stroke="#cbd5e1" stroke-width="2"/>
+          <line x1="190" y1="126" x2="210" y2="122" stroke="#cbd5e1" stroke-width="2"/>
+          <line x1="190" y1="132" x2="210" y2="134" stroke="#cbd5e1" stroke-width="2"/>
+        </svg>`
+      },
+      {
+        id: 3,
+        title: "Dream Castle",
+        category: "Fantasy",
+        date: "February 2026",
+        description: "A sparkling fairytale palace resting on pastel cotton clouds with golden spires and fluttering flags.",
+        svg: `<svg viewBox="0 0 320 240" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+          <defs><linearGradient id="nightGrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#4c1d95"/><stop offset="100%" stop-color="#a855f7"/></linearGradient></defs>
+          <rect width="320" height="240" fill="url(#nightGrad)"/>
+          <!-- Moon & Stars -->
+          <circle cx="60" cy="50" r="24" fill="#fef08a"/>
+          <circle cx="70" cy="46" r="20" fill="url(#nightGrad)"/>
+          <circle cx="260" cy="40" r="3" fill="#ffffff"/><circle cx="280" cy="70" r="2" fill="#ffffff"/><circle cx="110" cy="80" r="3" fill="#ffffff"/>
+          <!-- Clouds Base -->
+          <circle cx="60" cy="210" r="45" fill="#ffffff" fill-opacity="0.9"/>
+          <circle cx="140" cy="205" r="55" fill="#ffffff" fill-opacity="0.9"/>
+          <circle cx="220" cy="210" r="50" fill="#ffffff" fill-opacity="0.9"/>
+          <circle cx="280" cy="215" r="40" fill="#ffffff" fill-opacity="0.9"/>
+          <!-- Castle Towers -->
+          <rect x="110" y="110" width="30" height="80" fill="#e9d5ff"/>
+          <polygon points="105,110 125,60 145,110" fill="#ec4899"/>
+          <rect x="180" y="110" width="30" height="80" fill="#e9d5ff"/>
+          <polygon points="175,110 195,60 215,110" fill="#ec4899"/>
+          <rect x="135" y="90" width="50" height="100" fill="#f3e8ff"/>
+          <polygon points="130,90 160,40 190,90" fill="#f59e0b"/>
+          <!-- Door & Windows -->
+          <path d="M 150 190 A 10 10 0 0 1 170 190 L 170 190 L 150 190 Z" fill="#7e22ce"/>
+          <circle cx="160" cy="115" r="8" fill="#fef08a"/>
+        </svg>`
+      },
+      {
+        id: 4,
+        title: "Magic Butterfly",
+        category: "Cute",
+        date: "April 2026",
+        description: "An iridescent butterfly with stained-glass pastel wings leaving a trail of sparkling stardust.",
+        svg: `<svg viewBox="0 0 320 240" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+          <rect width="320" height="240" fill="#fefce8"/>
+          <!-- Left Top Wing -->
+          <path d="M 160 120 Q 80 40 50 90 T 160 130" fill="#f472b6" fill-opacity="0.85"/>
+          <circle cx="85" cy="85" r="10" fill="#fef08a"/>
+          <!-- Right Top Wing -->
+          <path d="M 160 120 Q 240 40 270 90 T 160 130" fill="#f472b6" fill-opacity="0.85"/>
+          <circle cx="235" cy="85" r="10" fill="#fef08a"/>
+          <!-- Left Bottom Wing -->
+          <path d="M 160 130 Q 90 160 70 200 T 160 150" fill="#60a5fa" fill-opacity="0.85"/>
+          <circle cx="105" cy="170" r="8" fill="#ffffff"/>
+          <!-- Right Bottom Wing -->
+          <path d="M 160 130 Q 230 160 250 200 T 160 150" fill="#60a5fa" fill-opacity="0.85"/>
+          <circle cx="215" cy="170" r="8" fill="#ffffff"/>
+          <!-- Body -->
+          <ellipse cx="160" cy="135" rx="6" ry="32" fill="#475569"/>
+          <circle cx="160" cy="100" r="8" fill="#475569"/>
+          <!-- Antennae -->
+          <path d="M 158 95 Q 140 70 130 75" stroke="#475569" stroke-width="2" fill="none"/>
+          <circle cx="130" cy="75" r="3" fill="#ec4899"/>
+          <path d="M 162 95 Q 180 70 190 75" stroke="#475569" stroke-width="2" fill="none"/>
+          <circle cx="190" cy="75" r="3" fill="#ec4899"/>
+        </svg>`
+      },
+      {
+        id: 5,
+        title: "Underwater World",
+        category: "Nature",
+        date: "January 2026",
+        description: "A joyful sea turtle swimming alongside glowing jellyfish and coral reefs in deep crystal waters.",
+        svg: `<svg viewBox="0 0 320 240" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+          <defs><linearGradient id="seaGrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#38bdf8"/><stop offset="100%" stop-color="#0369a1"/></linearGradient></defs>
+          <rect width="320" height="240" fill="url(#seaGrad)"/>
+          <!-- Seabed -->
+          <path d="M 0 210 Q 160 190 320 215 L 320 240 L 0 240 Z" fill="#fde047"/>
+          <!-- Seaweed -->
+          <path d="M 40 220 Q 30 170 50 130" stroke="#22c55e" stroke-width="8" stroke-linecap="round" fill="none"/>
+          <path d="M 280 220 Q 300 170 270 120" stroke="#16a34a" stroke-width="9" stroke-linecap="round" fill="none"/>
+          <!-- Friendly Turtle -->
+          <ellipse cx="160" cy="120" rx="36" ry="26" fill="#34d399"/>
+          <ellipse cx="160" cy="120" rx="28" ry="20" fill="#059669"/>
+          <circle cx="205" cy="115" r="12" fill="#34d399"/>
+          <circle cx="208" cy="112" r="3" fill="#0f172a"/>
+          <!-- Flippers -->
+          <path d="M 175 100 Q 190 70 170 65" fill="#34d399"/>
+          <path d="M 140 100 Q 120 70 140 65" fill="#34d399"/>
+          <!-- Bubbles -->
+          <circle cx="225" cy="90" r="5" fill="#ffffff" fill-opacity="0.6"/>
+          <circle cx="232" cy="70" r="7" fill="#ffffff" fill-opacity="0.6"/>
+          <circle cx="240" cy="45" r="9" fill="#ffffff" fill-opacity="0.6"/>
+        </svg>`
+      },
+      {
+        id: 6,
+        title: "Moon Adventure",
+        category: "Fantasy",
+        date: "May 2026",
+        description: "A retro rocket ship soaring past a sleepy smiling crescent moon with constellation sparklers.",
+        svg: `<svg viewBox="0 0 320 240" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+          <rect width="320" height="240" fill="#0f172a"/>
+          <!-- Moon -->
+          <circle cx="220" cy="90" r="45" fill="#fef08a"/>
+          <circle cx="235" cy="85" r="42" fill="#0f172a"/>
+          <!-- Stars -->
+          <circle cx="40" cy="40" r="3" fill="#ffffff"/><circle cx="120" cy="70" r="2" fill="#ffffff"/><circle cx="80" cy="180" r="3" fill="#ffffff"/><circle cx="280" cy="190" r="2" fill="#ffffff"/>
+          <!-- Rocket -->
+          <g transform="translate(100, 110) rotate(-45)">
+            <!-- Exhaust Flame -->
+            <polygon points="-12,50 0,75 12,50" fill="#f97316"/>
+            <polygon points="-6,50 0,65 6,50" fill="#facc15"/>
+            <!-- Rocket Body -->
+            <path d="M -18,48 Q -20,-10 0,-40 Q 20,-10 18,48 Z" fill="#ffffff"/>
+            <!-- Nose Cone -->
+            <path d="M -16,-10 Q 0,-40 16,-10 Z" fill="#ef4444"/>
+            <!-- Window -->
+            <circle cx="0" cy="5" r="10" fill="#38bdf8"/>
+            <circle cx="-3" cy="2" r="3" fill="#ffffff"/>
+            <!-- Wings -->
+            <polygon points="-18,25 -32,48 -18,48" fill="#ef4444"/>
+            <polygon points="18,25 32,48 18,48" fill="#ef4444"/>
+          </g>
+        </svg>`
+      },
+      {
+        id: 7,
+        title: "Happy Garden",
+        category: "Nature",
+        date: "April 2026",
+        description: "Giant sunflowers dancing in the breeze with a polka-dot ladybug and a yellow watering can.",
+        svg: `<svg viewBox="0 0 320 240" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+          <rect width="320" height="240" fill="#e0f2fe"/>
+          <!-- Ground -->
+          <rect y="170" width="320" height="70" fill="#86efac"/>
+          <!-- Sunflower 1 -->
+          <line x1="80" y1="180" x2="80" y2="90" stroke="#16a34a" stroke-width="6"/>
+          <ellipse cx="65" cy="140" rx="14" ry="6" fill="#22c55e" transform="rotate(-20 65 140)"/>
+          <circle cx="80" cy="85" r="35" fill="#facc15"/>
+          <circle cx="80" cy="85" r="18" fill="#78350f"/>
+          <!-- Sunflower 2 -->
+          <line x1="220" y1="180" x2="220" y2="105" stroke="#16a34a" stroke-width="6"/>
+          <circle cx="220" cy="100" r="32" fill="#facc15"/>
+          <circle cx="220" cy="100" r="16" fill="#78350f"/>
+          <!-- Cute Ladybug -->
+          <circle cx="150" cy="185" r="14" fill="#ef4444"/>
+          <circle cx="160" cy="180" r="6" fill="#0f172a"/>
+          <circle cx="146" cy="180" r="2.5" fill="#0f172a"/><circle cx="152" cy="190" r="2.5" fill="#0f172a"/>
+        </svg>`
+      },
+      {
+        id: 8,
+        title: "Friendly Dragon",
+        category: "Fantasy",
+        date: "March 2026",
+        description: "A gentle mint green baby dragon baking blueberry cupcakes with tiny warm flame puffs.",
+        svg: `<svg viewBox="0 0 320 240" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+          <rect width="320" height="240" fill="#ede9fe"/>
+          <!-- Dragon Body -->
+          <ellipse cx="160" cy="150" rx="48" ry="42" fill="#6ee7b7"/>
+          <circle cx="160" cy="95" r="32" fill="#6ee7b7"/>
+          <!-- Dragon Belly -->
+          <ellipse cx="160" cy="155" rx="30" ry="28" fill="#fef08a"/>
+          <!-- Horns -->
+          <polygon points="145,70 140,48 152,65" fill="#f59e0b"/>
+          <polygon points="175,70 180,48 168,65" fill="#f59e0b"/>
+          <!-- Eyes -->
+          <circle cx="150" cy="92" r="5" fill="#0f172a"/><circle cx="148" cy="90" r="2" fill="#ffffff"/>
+          <circle cx="170" cy="92" r="5" fill="#0f172a"/><circle cx="168" cy="90" r="2" fill="#ffffff"/>
+          <!-- Cute Smile & Flame Puff -->
+          <path d="M 154 105 Q 160 112 166 105" stroke="#047857" stroke-width="2.5" fill="none"/>
+          <circle cx="185" cy="100" r="6" fill="#fb923c"/><circle cx="195" cy="95" r="4" fill="#facc15"/>
+          <!-- Tiny Wings -->
+          <path d="M 115 130 Q 80 110 100 150 Z" fill="#34d399"/>
+          <path d="M 205 130 Q 240 110 220 150 Z" fill="#34d399"/>
+        </svg>`
+      },
+      {
+        id: 9,
+        title: "Color Explosion",
+        category: "My World",
+        date: "May 2026",
+        description: "An expressive kaleidoscope of watercolor paint splashes celebrating pure artistic freedom.",
+        svg: `<svg viewBox="0 0 320 240" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+          <rect width="320" height="240" fill="#ffffff"/>
+          <!-- Splash Splatters -->
+          <circle cx="160" cy="120" r="50" fill="#c084fc" fill-opacity="0.85"/>
+          <circle cx="120" cy="90" r="40" fill="#38bdf8" fill-opacity="0.8"/>
+          <circle cx="200" cy="100" r="38" fill="#f472b6" fill-opacity="0.85"/>
+          <circle cx="140" cy="160" r="35" fill="#facc15" fill-opacity="0.85"/>
+          <circle cx="185" cy="155" r="32" fill="#4ade80" fill-opacity="0.8"/>
+          <!-- Drips & Drops -->
+          <circle cx="70" cy="70" r="10" fill="#38bdf8"/>
+          <circle cx="250" cy="80" r="12" fill="#f472b6"/>
+          <circle cx="90" cy="180" r="14" fill="#facc15"/>
+          <circle cx="240" cy="180" r="11" fill="#c084fc"/>
+          <path d="M 160 120 L 270 50 M 160 120 L 50 190 M 160 120 L 250 200" stroke="#e2e8f0" stroke-width="3" stroke-dasharray="4"/>
+        </svg>`
+      },
+      {
+        id: 10,
+        title: "Dream House",
+        category: "My World",
+        date: "February 2026",
+        description: "A whimsical wooden treehouse wrapped in ivy vines, rope ladders, and fairy twinkle lights.",
+        svg: `<svg viewBox="0 0 320 240" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+          <rect width="320" height="240" fill="#fef3c7"/>
+          <!-- Tree Trunk -->
+          <rect x="140" y="100" width="40" height="140" fill="#b45309"/>
+          <!-- Tree Leaves Canopy -->
+          <circle cx="160" cy="70" r="65" fill="#22c55e"/>
+          <circle cx="110" cy="85" r="45" fill="#16a34a"/>
+          <circle cx="210" cy="85" r="45" fill="#16a34a"/>
+          <!-- Treehouse cabin -->
+          <rect x="125" y="65" width="70" height="50" fill="#fcd34d" stroke="#b45309" stroke-width="2"/>
+          <polygon points="115,65 160,35 205,65" fill="#ef4444"/>
+          <!-- Door & Window -->
+          <rect x="150" y="85" width="20" height="30" fill="#78350f"/>
+          <circle cx="138" cy="80" r="6" fill="#38bdf8"/>
+          <!-- Fairy Lights -->
+          <path d="M 115 115 Q 160 130 205 115" stroke="#78350f" fill="none"/>
+          <circle cx="130" cy="120" r="3" fill="#fef08a"/><circle cx="150" cy="123" r="3" fill="#ec4899"/><circle cx="170" cy="123" r="3" fill="#38bdf8"/><circle cx="190" cy="120" r="3" fill="#4ade80"/>
+        </svg>`
+      },
+      {
+        id: 11,
+        title: "Little Star",
+        category: "Cute",
+        date: "January 2026",
+        description: "A sleepy baby star resting peacefully on a lavender cloud hammock with lullaby constellations.",
+        svg: `<svg viewBox="0 0 320 240" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+          <rect width="320" height="240" fill="#312e81"/>
+          <!-- Cloud Hammock -->
+          <circle cx="120" cy="160" r="35" fill="#e0e7ff" fill-opacity="0.85"/>
+          <circle cx="160" cy="170" r="45" fill="#e0e7ff" fill-opacity="0.85"/>
+          <circle cx="200" cy="160" r="35" fill="#e0e7ff" fill-opacity="0.85"/>
+          <!-- Sleeping Star -->
+          <polygon points="160,80 168,105 195,108 174,124 180,150 160,136 140,150 146,124 125,108 152,105" fill="#fde047"/>
+          <!-- Sleeping eyes -->
+          <path d="M 152 118 Q 156 122 160 118" stroke="#78350f" stroke-width="2" fill="none"/>
+          <path d="M 164 118 Q 168 122 172 118" stroke="#78350f" stroke-width="2" fill="none"/>
+          <circle cx="150" cy="122" r="3" fill="#f472b6" fill-opacity="0.6"/>
+          <circle cx="174" cy="122" r="3" fill="#f472b6" fill-opacity="0.6"/>
+          <!-- ZZZ -->
+          <text x="195" y="85" fill="#ffffff" font-family="sans-serif" font-weight="bold" font-size="16">Z</text>
+          <text x="210" y="70" fill="#ffffff" font-family="sans-serif" font-weight="bold" font-size="12">z</text>
+        </svg>`
+      },
+      {
+        id: 12,
+        title: "Secret Forest",
+        category: "Nature",
+        date: "May 2026",
+        description: "Luminescent teal mushrooms, dancing fireflies, and ancient mossy stones deep in the magic woods.",
+        svg: `<svg viewBox="0 0 320 240" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+          <rect width="320" height="240" fill="#064e3b"/>
+          <!-- Forest Trees Silhouettes -->
+          <polygon points="60,20 10,190 110,190" fill="#065f46"/>
+          <polygon points="260,30 210,200 310,200" fill="#065f46"/>
+          <polygon points="160,40 100,210 220,210" fill="#047857"/>
+          <!-- Ground -->
+          <rect y="190" width="320" height="50" fill="#022c22"/>
+          <!-- Glowing Mushrooms -->
+          <path d="M 120 185 Q 140 140 160 185 Z" fill="#2dd4bf"/>
+          <circle cx="140" cy="165" r="4" fill="#ffffff"/>
+          <rect x="136" y="185" width="8" height="20" fill="#ccfbf1"/>
+          
+          <path d="M 175 190 Q 190 155 205 190 Z" fill="#a7f3d0"/>
+          <rect x="187" y="190" width="6" height="15" fill="#ccfbf1"/>
+          <!-- Fireflies -->
+          <circle cx="80" cy="130" r="4" fill="#fde047"/><circle cx="80" cy="130" r="10" fill="#fde047" fill-opacity="0.3"/>
+          <circle cx="230" cy="110" r="4" fill="#fde047"/><circle cx="230" cy="110" r="10" fill="#fde047" fill-opacity="0.3"/>
+          <circle cx="150" cy="80" r="3" fill="#fde047"/><circle cx="150" cy="80" r="8" fill="#fde047" fill-opacity="0.3"/>
+        </svg>`
+      }
+    ];
+
+    /* ==========================================================================
+       CHALLENGES LIST
+       ========================================================================== */
+    const CHALLENGES_LIST = [
+      "Draw a magical castle 🏰",
+      "Draw your dream pet 🐱",
+      "Draw an underwater world 🌊",
+      "Draw a space adventure 🚀",
+      "Draw a magical forest 🌳",
+      "Draw a friendly dragon 🐉",
+      "Draw a rainbow city 🌈",
+      "Draw a dream playground 🎠",
+      "Draw a tiny fairy house 🧚",
+      "Draw your imaginary planet 🪐"
+    ];
+
+    /* ==========================================================================
+       ACHIEVEMENTS SYSTEM DEFINITIONS
+       ========================================================================== */
+    const ACHIEVEMENTS_DEF = [
+      { id: "first_stroke", icon: "🌱", title: "First Creation", desc: "Drew your first magical stroke in the studio" },
+      { id: "color_explorer", icon: "🎨", title: "Color Explorer", desc: "Switched and tried 5 different vibrant colors" },
+      { id: "imagination_master", icon: "✨", title: "Imagination Master", desc: "Discovered the hidden celestial secret art room" },
+      { id: "rainbow_artist", icon: "🌈", title: "Rainbow Artist", desc: "Used the Rainbow or Sparkle magic brush" },
+      { id: "five_drawings", icon: "⭐", title: "5 Drawings", desc: "Downloaded or completed 5 creative masterpieces" },
+      { id: "ten_drawings", icon: "🏆", title: "10 Drawings", desc: "Master of imagination with 10 total artworks" },
+      { id: "creative_champion", icon: "💫", title: "Creative Champion", desc: "Completed 3 exciting drawing challenges" }
+    ];
+
+    /* ==========================================================================
+       ART QUIZ QUESTIONS
+       ========================================================================== */
+    const QUIZ_QUESTIONS = [
+      {
+        question: "What color do you get when you mix Red and Yellow paint? 🎨",
+        options: ["Green", "Orange", "Purple", "Brown"],
+        correct: 1
+      },
+      {
+        question: "Which of these is a Primary Color? 🌟",
+        options: ["Orange", "Blue", "Purple", "Pink"],
+        correct: 1
+      },
+      {
+        question: "What tool do watercolor artists use with paint? 💧",
+        options: ["Hammer", "Screwdriver", "Water & Brush", "Scissors"],
+        correct: 2
+      },
+      {
+        question: "What do you call a book where artists draw their ideas? 📖",
+        options: ["Dictionary", "Sketchbook", "Calculator", "Atlas"],
+        correct: 1
+      },
+      {
+        question: "What is the secret superpower every great artist has? ✨",
+        options: ["Imagination", "Wearing funny hats", "Eating vegetables", "Cold hands"],
+        correct: 0
+      }
+    ];
+
+    /* ==========================================================================
+       COMPLIMENTS LIST
+       ========================================================================== */
+    const COMPLIMENTS = [
+      "Your imagination is amazing! Every stroke you paint brings a little more joy into the world. ✨",
+      "Every great artist starts with one tiny idea. You made something wonderful today! 🎨",
+      "You made something that didn't exist before. That's true magic! 🌈",
+      "Your colors are as bright and cheerful as a morning sunrise! ☀️",
+      "Art has no mistakes—only happy little discoveries! Keep shining! 💖",
+      "The world is so lucky to have your creativity in it! 🌟"
+    ];
+
+    /* ==========================================================================
+       AUDIO SYNTHESIZER (WEB AUDIO API)
+       ========================================================================== */
+    let audioCtx = null;
+    let audioEnabled = true;
+
+    function initAudio() {
+      if (!audioCtx) {
+        const AudioContext = window.AudioContext || window.webkitAudioContext;
+        if (AudioContext) {
+          audioCtx = new AudioContext();
+        }
+      }
+      if (audioCtx && audioCtx.state === 'suspended') {
+        audioCtx.resume();
+      }
+    }
+
+    function playSound(type) {
+      if (!audioEnabled) return;
+      initAudio();
+      if (!audioCtx) return;
+
+      const osc = audioCtx.createOscillator();
+      const gain = audioCtx.createGain();
+      osc.connect(gain);
+      gain.connect(audioCtx.destination);
+
+      const now = audioCtx.currentTime;
+
+      if (type === 'pop') {
+        osc.frequency.setValueAtTime(400, now);
+        osc.frequency.exponentialRampToValueAtTime(800, now + 0.1);
+        gain.gain.setValueAtTime(0.15, now);
+        gain.gain.exponentialRampToValueAtTime(0.001, now + 0.1);
+        osc.start(now);
+        osc.stop(now + 0.1);
+      } else if (type === 'chime') {
+        osc.type = 'triangle';
+        osc.frequency.setValueAtTime(523.25, now); // C5
+        osc.frequency.setValueAtTime(659.25, now + 0.1); // E5
+        osc.frequency.setValueAtTime(783.99, now + 0.2); // G5
+        osc.frequency.setValueAtTime(1046.50, now + 0.3); // C6
+        gain.gain.setValueAtTime(0.2, now);
+        gain.gain.exponentialRampToValueAtTime(0.001, now + 0.6);
+        osc.start(now);
+        osc.stop(now + 0.6);
+      } else if (type === 'fanfare') {
+        [523.25, 659.25, 783.99, 1046.50].forEach((freq, idx) => {
+          const noteOsc = audioCtx.createOscillator();
+          const noteGain = audioCtx.createGain();
+          noteOsc.connect(noteGain);
+          noteGain.connect(audioCtx.destination);
+          noteOsc.frequency.setValueAtTime(freq, now + idx * 0.1);
+          noteGain.gain.setValueAtTime(0.15, now + idx * 0.1);
+          noteGain.gain.exponentialRampToValueAtTime(0.001, now + idx * 0.1 + 0.4);
+          noteOsc.start(now + idx * 0.1);
+          noteOsc.stop(now + idx * 0.1 + 0.4);
+        });
+      }
+    }
+
+    /* ==========================================================================
+       CONFETTI SYSTEM
+       ========================================================================== */
+    const confettiCanvas = document.getElementById('confettiCanvas');
+    const confettiCtx = confettiCanvas.getContext('2d');
+    let confettiParticles = [];
+    let confettiAnimId = null;
+
+    function resizeConfetti() {
+      confettiCanvas.width = window.innerWidth;
+      confettiCanvas.height = window.innerHeight;
+    }
+    window.addEventListener('resize', resizeConfetti);
+    resizeConfetti();
+
+    function triggerConfetti(count = 80) {
+      playSound('fanfare');
+      const colors = ['#f43f5e', '#ec4899', '#8b5cf6', '#3b82f6', '#10b981', '#f59e0b', '#fde047'];
+      for (let i = 0; i < count; i++) {
+        confettiParticles.push({
+          x: window.innerWidth / 2 + (Math.random() - 0.5) * 200,
+          y: window.innerHeight / 2 - 50,
+          vx: (Math.random() - 0.5) * 16,
+          vy: Math.random() * -14 - 4,
+          size: Math.random() * 8 + 6,
+          color: colors[Math.floor(Math.random() * colors.length)],
+          rotation: Math.random() * 360,
+          rotSpeed: (Math.random() - 0.5) * 10,
+          gravity: 0.35,
+          opacity: 1
+        });
+      }
+
+      if (!confettiAnimId) {
+        animateConfetti();
+      }
+    }
+
+    function animateConfetti() {
+      confettiCtx.clearRect(0, 0, confettiCanvas.width, confettiCanvas.height);
+      for (let i = confettiParticles.length - 1; i >= 0; i--) {
+        const p = confettiParticles[i];
+        p.x += p.vx;
+        p.y += p.vy;
+        p.vy += p.gravity;
+        p.rotation += p.rotSpeed;
+        p.opacity -= 0.008;
+
+        if (p.opacity <= 0 || p.y > confettiCanvas.height) {
+          confettiParticles.splice(i, 1);
+          continue;
+        }
+
+        confettiCtx.save();
+        confettiCtx.translate(p.x, p.y);
+        confettiCtx.rotate((p.rotation * Math.PI) / 180);
+        confettiCtx.fillStyle = p.color;
+        confettiCtx.globalAlpha = p.opacity;
+        confettiCtx.fillRect(-p.size / 2, -p.size / 2, p.size, p.size);
+        confettiCtx.restore();
+      }
+
+      if (confettiParticles.length > 0) {
+        confettiAnimId = requestAnimationFrame(animateConfetti);
+      } else {
+        confettiAnimId = null;
+      }
+    }
+
+    /* ==========================================================================
+       LOCALSTORAGE STATE CONTROLLER
+       ========================================================================== */
+    const STORAGE_KEYS = {
+      FAVORITES: 'arnika_art_favorites_v1',
+      ACHIEVEMENTS: 'arnika_achievements_v1',
+      CHALLENGES: 'arnika_challenges_count_v1',
+      BIO: 'arnika_artist_bio_v1',
+      TODO: 'arnika_sketchbook_todos_v1',
+      STICKY: 'arnika_sketchbook_notes_v1',
+      GUESTBOOK: 'arnika_guestbook_notes_v1',
+      DRAWINGS_COUNT: 'arnika_drawings_saved_count_v1'
+    };
+
+    function getStorage(key, fallback) {
+      try {
+        const data = localStorage.getItem(key);
+        return data ? JSON.parse(data) : fallback;
+      } catch (e) {
+        return fallback;
+      }
+    }
+
+    function setStorage(key, val) {
+      try {
+        localStorage.setItem(key, JSON.stringify(val));
+      } catch (e) {
+        console.warn('LocalStorage error:', e);
+      }
+    }
+
+    /* ==========================================================================
+       NAVIGATION & SMOOTH SCROLL
+       ========================================================================== */
+    const mainNav = document.getElementById('mainNav');
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const navLinks = document.getElementById('navLinks');
+    const navLinksArr = document.querySelectorAll('.nav-link');
+    const sectionsArr = document.querySelectorAll('section[id]');
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 40) {
+        mainNav.classList.add('scrolled');
+      } else {
+        mainNav.classList.remove('scrolled');
+      }
+
+      // Active link highlight
+      let currentSection = '';
+      sectionsArr.forEach(section => {
+        const top = section.offsetTop - 120;
+        const height = section.offsetHeight;
+        if (window.scrollY >= top && window.scrollY < top + height) {
+          currentSection = section.getAttribute('id');
+        }
+      });
+
+      navLinksArr.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === `#${currentSection}`) {
+          link.classList.add('active');
+        }
+      });
+    });
+
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenuBtn.classList.toggle('open');
+      navLinks.classList.toggle('open');
+    });
+
+    navLinksArr.forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenuBtn.classList.remove('open');
+        navLinks.classList.remove('open');
+      });
+    });
+
+    // Audio Button
+    const audioToggleBtn = document.getElementById('audioToggleBtn');
+    audioToggleBtn.addEventListener('click', () => {
+      audioEnabled = !audioEnabled;
+      audioToggleBtn.textContent = audioEnabled ? '🔔' : '🔕';
+      audioToggleBtn.title = audioEnabled ? 'Sound Enabled' : 'Sound Muted';
+      if (audioEnabled) playSound('pop');
+    });
+
+    /* ==========================================================================
+       HERO PARALLAX INTERACTION
+       ========================================================================== */
+    const heroComposition = document.getElementById('heroComposition');
+    const heroBaseCard = document.getElementById('heroBaseCard');
+
+    heroComposition.addEventListener('mousemove', (e) => {
+      if (window.innerWidth < 768) return;
+      const rect = heroComposition.getBoundingClientRect();
+      const x = e.clientX - rect.left - rect.width / 2;
+      const y = e.clientY - rect.top - rect.height / 2;
+      heroBaseCard.style.transform = `rotate(${x * 0.02}deg) translate(${x * 0.03}px, ${y * 0.03}px)`;
+    });
+
+    heroComposition.addEventListener('mouseleave', () => {
+      heroBaseCard.style.transform = 'rotate(-3deg)';
+    });
+
+    /* ==========================================================================
+       ABOUT SECTION - EDITABLE BIO
+       ========================================================================== */
+    const artistBioBox = document.getElementById('artistBioBox');
+    const artistBioText = document.getElementById('artistBioText');
+
+    const savedBio = getStorage(STORAGE_KEYS.BIO, null);
+    if (savedBio) {
+      artistBioText.textContent = savedBio;
+    }
+
+    artistBioBox.addEventListener('click', () => {
+      const current = artistBioText.textContent.replace(/"/g, '').trim();
+      const updated = prompt("✨ Edit Arnika's Artist Bio:", current);
+      if (updated && updated.trim() !== "") {
+        artistBioText.textContent = `"${updated.trim()}"`;
+        setStorage(STORAGE_KEYS.BIO, `"${updated.trim()}"`);
+        playSound('chime');
+      }
+    });
+
+    /* ==========================================================================
+       ART GALLERY & LIGHTBOX
+       ========================================================================== */
+    let currentFilter = 'All';
+    let favoritesList = getStorage(STORAGE_KEYS.FAVORITES, [1, 3]); // pre-favorite two items
+    let currentLightboxIndex = 0;
+
+    const galleryGrid = document.getElementById('galleryGrid');
+    const galleryFilters = document.getElementById('galleryFilters');
+    const filterBtns = galleryFilters.querySelectorAll('.filter-btn');
+
+    function renderGallery() {
+      galleryGrid.innerHTML = '';
+
+      const filtered = ARTWORKS.filter(art => {
+        if (currentFilter === 'All') return true;
+        if (currentFilter === 'Favorites') return favoritesList.includes(art.id);
+        return art.category === currentFilter;
+      });
+
+      if (filtered.length === 0) {
+        galleryGrid.innerHTML = `
+          <div style="grid-column: 1 / -1; text-align: center; padding: 4rem 1rem;">
+            <div style="font-size: 3rem; margin-bottom: 1rem;">🎨</div>
+            <h3 style="font-family: var(--font-heading); font-size: 1.5rem; color: var(--text-main);">No Artworks In This Category Yet!</h3>
+            <p style="color: var(--text-muted); margin-top: 0.5rem;">Click the heart icon on any artwork to add it to your favorites!</p>
+          </div>
+        `;
+        return;
+      }
+
+      filtered.forEach(art => {
+        const isFav = favoritesList.includes(art.id);
+        const card = document.createElement('div');
+        card.className = 'artwork-card';
+        card.innerHTML = `
+          <div class="artwork-img-container" data-id="${art.id}">
+            ${art.svg}
+            <div class="artwork-badge-category">${art.category}</div>
+            <button class="artwork-fav-btn ${isFav ? 'favorited' : ''}" data-id="${art.id}" title="${isFav ? 'Remove Favorite' : 'Add Favorite'}" aria-label="Favorite ${art.title}">
+              ${isFav ? '❤️' : '🤍'}
+            </button>
+          </div>
+          <div class="artwork-info">
+            <div class="artwork-meta">
+              <span class="artwork-date">${art.date}</span>
+            </div>
+            <h3 class="artwork-title" data-id="${art.id}">${art.title}</h3>
+            <p class="artwork-desc">${art.description}</p>
+            <div class="artwork-footer">
+              <button class="view-artwork-link" data-id="${art.id}">
+                View in Lightbox <span>→</span>
+              </button>
+            </div>
+          </div>
+        `;
+        galleryGrid.appendChild(card);
+      });
+
+      updateFilterCounts();
+    }
+
+    function updateFilterCounts() {
+      document.getElementById('countAll').textContent = ARTWORKS.length;
+      document.getElementById('countNature').textContent = ARTWORKS.filter(a => a.category === 'Nature').length;
+      document.getElementById('countAnimals').textContent = ARTWORKS.filter(a => a.category === 'Animals').length;
+      document.getElementById('countFantasy').textContent = ARTWORKS.filter(a => a.category === 'Fantasy').length;
+      document.getElementById('countCute').textContent = ARTWORKS.filter(a => a.category === 'Cute').length;
+      document.getElementById('countMyWorld').textContent = ARTWORKS.filter(a => a.category === 'My World').length;
+      document.getElementById('countFavorites').textContent = favoritesList.length;
+    }
+
+    // Filter clicks
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        currentFilter = btn.dataset.category;
+        playSound('pop');
+        renderGallery();
+      });
+    });
+
+    // Gallery Card Event Delegation (Favorites & Lightbox)
+    galleryGrid.addEventListener('click', (e) => {
+      const favBtn = e.target.closest('.artwork-fav-btn');
+      if (favBtn) {
+        e.stopPropagation();
+        const id = parseInt(favBtn.dataset.id, 10);
+        toggleFavorite(id);
+        return;
+      }
+
+      const trigger = e.target.closest('.artwork-img-container, .artwork-title, .view-artwork-link');
+      if (trigger) {
+        const id = parseInt(trigger.dataset.id, 10);
+        openLightboxById(id);
+      }
+    });
+
+    function toggleFavorite(id) {
+      if (favoritesList.includes(id)) {
+        favoritesList = favoritesList.filter(fId => fId !== id);
+      } else {
+        favoritesList.push(id);
+        playSound('pop');
+      }
+      setStorage(STORAGE_KEYS.FAVORITES, favoritesList);
+      renderGallery();
+    }
+
+    // Lightbox Controls
+    const lightboxModal = document.getElementById('lightboxModal');
+    const lightboxCloseBtn = document.getElementById('lightboxCloseBtn');
+    const lightboxPrevBtn = document.getElementById('lightboxPrevBtn');
+    const lightboxNextBtn = document.getElementById('lightboxNextBtn');
+    const lightboxPreviewArea = document.getElementById('lightboxPreviewArea');
+    const lightboxCategory = document.getElementById('lightboxCategory');
+    const lightboxTitle = document.getElementById('lightboxTitle');
+    const lightboxDate = document.getElementById('lightboxDate');
+    const lightboxDesc = document.getElementById('lightboxDesc');
+    const lightboxFavBtn = document.getElementById('lightboxFavBtn');
+    const lightboxFavIcon = document.getElementById('lightboxFavIcon');
+    const lightboxFavText = document.getElementById('lightboxFavText');
+    const lightboxDrawSimilarBtn = document.getElementById('lightboxDrawSimilarBtn');
+
+    function openLightboxById(id) {
+      const idx = ARTWORKS.findIndex(a => a.id === id);
+      if (idx !== -1) {
+        currentLightboxIndex = idx;
+        updateLightboxContent();
+        lightboxModal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+        playSound('pop');
+      }
+    }
+
+    function updateLightboxContent() {
+      const art = ARTWORKS[currentLightboxIndex];
+      lightboxPreviewArea.innerHTML = art.svg;
+      lightboxCategory.textContent = art.category;
+      lightboxTitle.textContent = art.title;
+      lightboxDate.textContent = `Created: ${art.date}`;
+      lightboxDesc.textContent = art.description;
+
+      const isFav = favoritesList.includes(art.id);
+      lightboxFavIcon.textContent = isFav ? '❤️' : '🤍';
+      lightboxFavText.textContent = isFav ? 'Favorited' : 'Add to Favorites';
+    }
+
+    function closeLightbox() {
+      lightboxModal.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    lightboxCloseBtn.addEventListener('click', closeLightbox);
+    lightboxModal.addEventListener('click', (e) => {
+      if (e.target === lightboxModal) closeLightbox();
+    });
+
+    lightboxPrevBtn.addEventListener('click', () => {
+      currentLightboxIndex = (currentLightboxIndex - 1 + ARTWORKS.length) % ARTWORKS.length;
+      updateLightboxContent();
+      playSound('pop');
+    });
+
+    lightboxNextBtn.addEventListener('click', () => {
+      currentLightboxIndex = (currentLightboxIndex + 1) % ARTWORKS.length;
+      updateLightboxContent();
+      playSound('pop');
+    });
+
+    lightboxFavBtn.addEventListener('click', () => {
+      const art = ARTWORKS[currentLightboxIndex];
+      toggleFavorite(art.id);
+      const isFav = favoritesList.includes(art.id);
+      lightboxFavIcon.textContent = isFav ? '❤️' : '🤍';
+      lightboxFavText.textContent = isFav ? 'Favorited' : 'Add to Favorites';
+    });
+
+    lightboxDrawSimilarBtn.addEventListener('click', () => {
+      closeLightbox();
+      const art = ARTWORKS[currentLightboxIndex];
+      setChallengeInspiration(`Draw your version of "${art.title}"! 🎨`);
+      document.getElementById('studio').scrollIntoView({ behavior: 'smooth' });
+    });
+
+    // Keyboard Shortcuts
+    window.addEventListener('keydown', (e) => {
+      if (lightboxModal.classList.contains('active')) {
+        if (e.key === 'Escape') closeLightbox();
+        if (e.key === 'ArrowLeft') lightboxPrevBtn.click();
+        if (e.key === 'ArrowRight') lightboxNextBtn.click();
+      }
+    });
+
+    /* ==========================================================================
+       INTERACTIVE DRAWING STUDIO (CANVAS & POINTER EVENTS)
+       ========================================================================== */
+    const canvas = document.getElementById('drawingCanvas');
+    const ctx = canvas.getContext('2d');
+    const canvasContainer = document.getElementById('canvasContainer');
+
+    let isDrawing = false;
+    let currentTool = 'pencil'; // pencil, brush, marker, eraser, rainbow, sparkle, stars, hearts, flowers
+    let currentColor = '#8b5cf6';
+    let currentBrushSize = 12;
+    let currentOpacity = 1.0;
+    let rainbowHue = 0;
+    let usedColorsCount = new Set(['#8b5cf6']);
+
+    // Undo / Redo history
+    let undoStack = [];
+    let redoStack = [];
+    const MAX_HISTORY = 25;
+
+    function resizeCanvas() {
+      const rect = canvasContainer.getBoundingClientRect();
+      const displayWidth = rect.width - 32;
+      const displayHeight = Math.min(rect.height - 32, 600);
+
+      // Save existing image before resize
+      let tempImg = null;
+      if (canvas.width > 0 && canvas.height > 0) {
+        tempImg = ctx.getImageData(0, 0, canvas.width, canvas.height);
+      }
+
+      const dpr = window.devicePixelRatio || 1;
+      canvas.width = displayWidth * dpr;
+      canvas.height = displayHeight * dpr;
+      canvas.style.width = `${displayWidth}px`;
+      canvas.style.height = `${displayHeight}px`;
+
+      ctx.scale(dpr, dpr);
+      ctx.lineCap = 'round';
+      ctx.lineJoin = 'round';
+
+      // Fill clean white background
+      ctx.fillStyle = '#ffffff';
+      ctx.fillRect(0, 0, displayWidth, displayHeight);
+
+      if (tempImg) {
+        ctx.putImageData(tempImg, 0, 0);
+      } else {
+        saveCanvasState();
+      }
+    }
+
+    window.addEventListener('resize', resizeCanvas);
+    // Initialize after layout paint
+    setTimeout(resizeCanvas, 50);
+
+    function saveCanvasState() {
+      if (undoStack.length >= MAX_HISTORY) {
+        undoStack.shift();
+      }
+      undoStack.push(ctx.getImageData(0, 0, canvas.width, canvas.height));
+      redoStack = [];
+      updateUndoRedoButtons();
+    }
+
+    const undoBtn = document.getElementById('undoBtn');
+    const redoBtn = document.getElementById('redoBtn');
+
+    function updateUndoRedoButtons() {
+      undoBtn.disabled = undoStack.length <= 1;
+      redoBtn.disabled = redoStack.length === 0;
+    }
+
+    undoBtn.addEventListener('click', () => {
+      if (undoStack.length > 1) {
+        redoStack.push(undoStack.pop());
+        const previousState = undoStack[undoStack.length - 1];
+        ctx.putImageData(previousState, 0, 0);
+        updateUndoRedoButtons();
+        playSound('pop');
+      }
+    });
+
+    redoBtn.addEventListener('click', () => {
+      if (redoStack.length > 0) {
+        const nextState = redoStack.pop();
+        undoStack.push(nextState);
+        ctx.putImageData(nextState, 0, 0);
+        updateUndoRedoButtons();
+        playSound('pop');
+      }
+    });
+
+    // Tool Buttons
+    const toolBtns = document.querySelectorAll('.tool-btn, .magic-btn');
+    toolBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        toolBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        currentTool = btn.dataset.tool;
+        playSound('pop');
+
+        if (['rainbow', 'sparkle'].includes(currentTool)) {
+          unlockAchievement('rainbow_artist');
+        }
+      });
+    });
+
+    // Color Swatches
+    const colorSwatches = document.querySelectorAll('.color-swatch');
+    const customColorPicker = document.getElementById('customColorPicker');
+    const brushPreviewDot = document.getElementById('brushPreviewDot');
+
+    colorSwatches.forEach(swatch => {
+      swatch.addEventListener('click', () => {
+        colorSwatches.forEach(s => s.classList.remove('active'));
+        swatch.classList.add('active');
+        currentColor = swatch.dataset.color;
+        customColorPicker.value = currentColor;
+        brushPreviewDot.style.backgroundColor = currentColor;
+        usedColorsCount.add(currentColor);
+        if (usedColorsCount.size >= 5) {
+          unlockAchievement('color_explorer');
+        }
+        playSound('pop');
+      });
+    });
+
+    customColorPicker.addEventListener('input', (e) => {
+      currentColor = e.target.value;
+      colorSwatches.forEach(s => s.classList.remove('active'));
+      brushPreviewDot.style.backgroundColor = currentColor;
+      usedColorsCount.add(currentColor);
+      if (usedColorsCount.size >= 5) {
+        unlockAchievement('color_explorer');
+      }
+    });
+
+    // Size & Opacity Sliders
+    const brushSizeSlider = document.getElementById('brushSizeSlider');
+    const brushSizeVal = document.getElementById('brushSizeVal');
+    const opacitySlider = document.getElementById('opacitySlider');
+    const opacityVal = document.getElementById('opacityVal');
+
+    brushSizeSlider.addEventListener('input', (e) => {
+      currentBrushSize = parseInt(e.target.value, 10);
+      brushSizeVal.textContent = `${currentBrushSize}px`;
+      brushPreviewDot.style.width = `${Math.min(currentBrushSize, 44)}px`;
+      brushPreviewDot.style.height = `${Math.min(currentBrushSize, 44)}px`;
+    });
+
+    opacitySlider.addEventListener('input', (e) => {
+      currentOpacity = parseInt(e.target.value, 10) / 100;
+      opacityVal.textContent = `${e.target.value}%`;
+      brushPreviewDot.style.opacity = currentOpacity;
+    });
+
+    // Pointer Events for Canvas
+    function getCanvasCoordinates(e) {
+      const rect = canvas.getBoundingClientRect();
+      return {
+        x: e.clientX - rect.left,
+        y: e.clientY - rect.top
+      };
+    }
+
+    let lastX = 0;
+    let lastY = 0;
+
+    canvas.addEventListener('pointerdown', (e) => {
+      canvas.setPointerCapture(e.pointerId);
+      isDrawing = true;
+      const coords = getCanvasCoordinates(e);
+      lastX = coords.x;
+      lastY = coords.y;
+
+      unlockAchievement('first_stroke');
+
+      // Draw initial point/stamp
+      drawStroke(coords.x, coords.y, true);
+    });
+
+    canvas.addEventListener('pointermove', (e) => {
+      if (!isDrawing) return;
+      const coords = getCanvasCoordinates(e);
+      drawStroke(coords.x, coords.y, false);
+      lastX = coords.x;
+      lastY = coords.y;
+    });
+
+    function stopDrawing(e) {
+      if (isDrawing) {
+        isDrawing = false;
+        try {
+          canvas.releasePointerCapture(e.pointerId);
+        } catch (err) {}
+        saveCanvasState();
+      }
+    }
+
+    canvas.addEventListener('pointerup', stopDrawing);
+    canvas.addEventListener('pointercancel', stopDrawing);
+
+    function drawStroke(x, y, isStart = false) {
+      ctx.save();
+      ctx.globalAlpha = currentOpacity;
+
+      if (currentTool === 'eraser') {
+        ctx.globalCompositeOperation = 'destination-out';
+        ctx.lineWidth = currentBrushSize * 2;
+        ctx.beginPath();
+        ctx.moveTo(lastX, lastY);
+        ctx.lineTo(x, y);
+        ctx.stroke();
+      } else if (currentTool === 'pencil') {
+        ctx.globalCompositeOperation = 'source-over';
+        ctx.strokeStyle = currentColor;
+        ctx.lineWidth = Math.max(currentBrushSize * 0.4, 2);
+        ctx.beginPath();
+        ctx.moveTo(lastX, lastY);
+        ctx.lineTo(x, y);
+        ctx.stroke();
+      } else if (currentTool === 'brush') {
+        ctx.globalCompositeOperation = 'source-over';
+        ctx.strokeStyle = currentColor;
+        ctx.lineWidth = currentBrushSize;
+        ctx.beginPath();
+        ctx.moveTo(lastX, lastY);
+        ctx.lineTo(x, y);
+        ctx.stroke();
+      } else if (currentTool === 'marker') {
+        ctx.globalCompositeOperation = 'source-over';
+        ctx.strokeStyle = currentColor;
+        ctx.lineWidth = currentBrushSize * 1.5;
+        ctx.beginPath();
+        ctx.moveTo(lastX, lastY);
+        ctx.lineTo(x, y);
+        ctx.stroke();
+      } else if (currentTool === 'rainbow') {
+        ctx.globalCompositeOperation = 'source-over';
+        rainbowHue = (rainbowHue + 4) % 360;
+        ctx.strokeStyle = `hsl(${rainbowHue}, 90%, 60%)`;
+        ctx.lineWidth = currentBrushSize;
+        ctx.beginPath();
+        ctx.moveTo(lastX, lastY);
+        ctx.lineTo(x, y);
+        ctx.stroke();
+      } else if (currentTool === 'sparkle') {
+        // Glowing stardust trail
+        ctx.globalCompositeOperation = 'source-over';
+        const numParticles = 3;
+        for (let i = 0; i < numParticles; i++) {
+          const offsetX = (Math.random() - 0.5) * currentBrushSize * 1.5;
+          const offsetY = (Math.random() - 0.5) * currentBrushSize * 1.5;
+          ctx.fillStyle = '#fef08a';
+          ctx.beginPath();
+          ctx.arc(x + offsetX, y + offsetY, Math.random() * 3 + 1, 0, Math.PI * 2);
+          ctx.fill();
+        }
+      } else if (currentTool === 'stars') {
+        // Stamp glowing 5-pointed star
+        if (isStart || Math.hypot(x - lastX, y - lastY) > currentBrushSize * 1.8) {
+          drawStar(ctx, x, y, 5, currentBrushSize * 0.8, currentBrushSize * 0.4, currentColor);
+        }
+      } else if (currentTool === 'hearts') {
+        // Stamp cute heart
+        if (isStart || Math.hypot(x - lastX, y - lastY) > currentBrushSize * 1.8) {
+          drawHeart(ctx, x, y, currentBrushSize * 0.8, currentColor);
+        }
+      } else if (currentTool === 'flowers') {
+        // Stamp flower
+        if (isStart || Math.hypot(x - lastX, y - lastY) > currentBrushSize * 2) {
+          drawFlower(ctx, x, y, currentBrushSize * 0.8, currentColor);
+        }
+      }
+
+      ctx.restore();
+    }
+
+    function drawStar(ctx, cx, cy, spikes, outerRadius, innerRadius, color) {
+      let rot = (Math.PI / 2) * 3;
+      let x = cx;
+      let y = cy;
+      let step = Math.PI / spikes;
+
+      ctx.beginPath();
+      ctx.moveTo(cx, cy - outerRadius);
+      for (let i = 0; i < spikes; i++) {
+        x = cx + Math.cos(rot) * outerRadius;
+        y = cy + Math.sin(rot) * outerRadius;
+        ctx.lineTo(x, y);
+        rot += step;
+
+        x = cx + Math.cos(rot) * innerRadius;
+        y = cy + Math.sin(rot) * innerRadius;
+        ctx.lineTo(x, y);
+        rot += step;
+      }
+      ctx.lineTo(cx, cy - outerRadius);
+      ctx.closePath();
+      ctx.fillStyle = color;
+      ctx.fill();
+    }
+
+    function drawHeart(ctx, x, y, size, color) {
+      ctx.save();
+      ctx.translate(x, y);
+      ctx.scale(size / 20, size / 20);
+      ctx.beginPath();
+      ctx.moveTo(0, 0);
+      ctx.bezierCurveTo(-10, -10, -20, 5, 0, 20);
+      ctx.bezierCurveTo(20, 5, 10, -10, 0, 0);
+      ctx.fillStyle = color;
+      ctx.fill();
+      ctx.restore();
+    }
+
+    function drawFlower(ctx, x, y, size, color) {
+      ctx.save();
+      ctx.translate(x, y);
+      for (let i = 0; i < 5; i++) {
+        ctx.rotate((Math.PI * 2) / 5);
+        ctx.beginPath();
+        ctx.ellipse(0, size * 0.6, size * 0.4, size * 0.6, 0, 0, Math.PI * 2);
+        ctx.fillStyle = color;
+        ctx.fill();
+      }
+      // Yellow center
+      ctx.beginPath();
+      ctx.arc(0, 0, size * 0.35, 0, Math.PI * 2);
+      ctx.fillStyle = '#fde047';
+      ctx.fill();
+      ctx.restore();
+    }
+
+    // Clear Canvas Dialog
+    const clearBtn = document.getElementById('clearBtn');
+    const clearConfirmModal = document.getElementById('clearConfirmModal');
+    const cancelClearBtn = document.getElementById('cancelClearBtn');
+    const confirmClearBtn = document.getElementById('confirmClearBtn');
+
+    clearBtn.addEventListener('click', () => {
+      clearConfirmModal.classList.add('active');
+    });
+
+    cancelClearBtn.addEventListener('click', () => {
+      clearConfirmModal.classList.remove('active');
+    });
+
+    confirmClearBtn.addEventListener('click', () => {
+      clearConfirmModal.classList.remove('active');
+      const rect = canvas.getBoundingClientRect();
+      ctx.fillStyle = '#ffffff';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      saveCanvasState();
+      playSound('pop');
+    });
+
+    // Download Masterpiece
+    const downloadBtn = document.getElementById('downloadBtn');
+    downloadBtn.addEventListener('click', () => {
+      const link = document.createElement('a');
+      link.download = `Arnika_Art_Masterpiece_${Date.now()}.png`;
+      link.href = canvas.toDataURL('image/png');
+      link.click();
+      playSound('fanfare');
+      triggerConfetti(60);
+
+      // Increment saved drawings
+      let count = getStorage(STORAGE_KEYS.DRAWINGS_COUNT, 0) + 1;
+      setStorage(STORAGE_KEYS.DRAWINGS_COUNT, count);
+      if (count >= 5) unlockAchievement('five_drawings');
+      if (count >= 10) unlockAchievement('ten_drawings');
+    });
+
+    /* ==========================================================================
+       DRAWING CHALLENGES
+       ========================================================================== */
+    const challengeDisplay = document.getElementById('challengeDisplay');
+    const newChallengeBtn = document.getElementById('newChallengeBtn');
+    const startChallengeBtn = document.getElementById('startChallengeBtn');
+    const completeChallengeBtn = document.getElementById('completeChallengeBtn');
+    const completedCountSpan = document.getElementById('completedCount');
+    const studioChallengeBadge = document.getElementById('studioChallengeBadge');
+    const studioChallengeText = document.getElementById('studioChallengeText');
+
+    let currentChallengeIndex = 0;
+    let completedChallengesCount = getStorage(STORAGE_KEYS.CHALLENGES, 0);
+    completedCountSpan.textContent = completedChallengesCount;
+
+    function getNextChallenge() {
+      let nextIdx;
+      do {
+        nextIdx = Math.floor(Math.random() * CHALLENGES_LIST.length);
+      } while (nextIdx === currentChallengeIndex && CHALLENGES_LIST.length > 1);
+      currentChallengeIndex = nextIdx;
+      challengeDisplay.textContent = `"${CHALLENGES_LIST[currentChallengeIndex]}"`;
+      playSound('pop');
+    }
+
+    newChallengeBtn.addEventListener('click', getNextChallenge);
+
+    function setChallengeInspiration(text) {
+      studioChallengeText.textContent = text;
+      studioChallengeBadge.classList.add('visible');
+    }
+
+    startChallengeBtn.addEventListener('click', () => {
+      setChallengeInspiration(`Inspiration: ${CHALLENGES_LIST[currentChallengeIndex]}`);
+      document.getElementById('studio').scrollIntoView({ behavior: 'smooth' });
+      playSound('pop');
+    });
+
+    completeChallengeBtn.addEventListener('click', () => {
+      completedChallengesCount++;
+      setStorage(STORAGE_KEYS.CHALLENGES, completedChallengesCount);
+      completedCountSpan.textContent = completedChallengesCount;
+      triggerConfetti(70);
+
+      if (completedChallengesCount >= 3) {
+        unlockAchievement('creative_champion');
+      }
+    });
+
+    /* ==========================================================================
+       ACHIEVEMENTS SYSTEM IMPLEMENTATION
+       ========================================================================== */
+    const achievementsGrid = document.getElementById('achievementsGrid');
+    const achievementPopupModal = document.getElementById('achievementPopupModal');
+    const celebrateIcon = document.getElementById('celebrateIcon');
+    const celebrateTitle = document.getElementById('celebrateTitle');
+    const celebrateDesc = document.getElementById('celebrateDesc');
+    const celebrateCloseBtn = document.getElementById('celebrateCloseBtn');
+
+    let unlockedAchievements = getStorage(STORAGE_KEYS.ACHIEVEMENTS, []);
+
+    function renderAchievements() {
+      achievementsGrid.innerHTML = '';
+      ACHIEVEMENTS_DEF.forEach(ach => {
+        const isUnlocked = unlockedAchievements.includes(ach.id);
+        const card = document.createElement('div');
+        card.className = `achievement-card ${isUnlocked ? 'unlocked' : 'locked'}`;
+        card.innerHTML = `
+          <div class="achievement-icon-circle">${ach.icon}</div>
+          <div class="achievement-title">${ach.title}</div>
+          <div class="achievement-desc">${ach.desc}</div>
+          <div class="achievement-status-tag">${isUnlocked ? '🌟 UNLOCKED' : '🔒 LOCKED'}</div>
+        `;
+        achievementsGrid.appendChild(card);
+      });
+    }
+
+    function unlockAchievement(id) {
+      if (unlockedAchievements.includes(id)) return;
+      const ach = ACHIEVEMENTS_DEF.find(a => a.id === id);
+      if (!ach) return;
+
+      unlockedAchievements.push(id);
+      setStorage(STORAGE_KEYS.ACHIEVEMENTS, unlockedAchievements);
+      renderAchievements();
+
+      // Show celebratory modal
+      celebrateIcon.textContent = ach.icon;
+      celebrateTitle.textContent = ach.title;
+      celebrateDesc.textContent = ach.desc;
+      achievementPopupModal.classList.add('active');
+      triggerConfetti(80);
+    }
+
+    celebrateCloseBtn.addEventListener('click', () => {
+      achievementPopupModal.classList.remove('active');
+    });
+
+    /* ==========================================================================
+       DIGITAL SKETCHBOOK CONTROLLER
+       ========================================================================== */
+    let currentSketchPage = 1;
+    const TOTAL_PAGES = 4;
+
+    const sketchPageTitle = document.getElementById('sketchbookPageTitle');
+    const sketchPageIndicator = document.getElementById('sketchbookPageIndicator');
+    const sketchPrevBtn = document.getElementById('sketchPrevBtn');
+    const sketchNextBtn = document.getElementById('sketchNextBtn');
+
+    const PAGE_TITLES = {
+      1: "Things I Want To Draw",
+      2: "My Favorite Colors",
+      3: "My Drawing Ideas",
+      4: "My Little Notes"
+    };
+
+    function updateSketchbook() {
+      for (let i = 1; i <= TOTAL_PAGES; i++) {
+        const pageEl = document.getElementById(`sketchPage${i}`);
+        if (pageEl) {
+          pageEl.classList.toggle('active', i === currentSketchPage);
+        }
+      }
+      sketchPageTitle.textContent = PAGE_TITLES[currentSketchPage];
+      sketchPageIndicator.textContent = `Page ${currentSketchPage} of ${TOTAL_PAGES}`;
+      sketchPrevBtn.disabled = currentSketchPage === 1;
+      sketchNextBtn.disabled = currentSketchPage === TOTAL_PAGES;
+    }
+
+    sketchPrevBtn.addEventListener('click', () => {
+      if (currentSketchPage > 1) {
+        currentSketchPage--;
+        updateSketchbook();
+        playSound('pop');
+      }
+    });
+
+    sketchNextBtn.addEventListener('click', () => {
+      if (currentSketchPage < TOTAL_PAGES) {
+        currentSketchPage++;
+        updateSketchbook();
+        playSound('pop');
+      }
+    });
+
+    // Sketchbook Page 1: Wishlist Todo items
+    const todoList = document.getElementById('todoList');
+    const newTodoInput = document.getElementById('newTodoInput');
+    const addTodoBtn = document.getElementById('addTodoBtn');
+
+    let savedTodos = getStorage(STORAGE_KEYS.TODO, [
+      { text: "Baby penguin wearing a cozy striped scarf 🐧", checked: true },
+      { text: "A secret door inside an old oak tree 🌳", checked: false },
+      { text: "Mermaid kitten playing with glowing sea bubbles 🐱", checked: false },
+      { text: "Rainbow hot air balloon flying over the Alps 🎈", checked: false }
+    ]);
+
+    function renderTodos() {
+      todoList.innerHTML = '';
+      savedTodos.forEach((item, index) => {
+        const row = document.createElement('div');
+        row.className = `todo-item ${item.checked ? 'checked' : ''}`;
+        row.innerHTML = `
+          <input type="checkbox" ${item.checked ? 'checked' : ''} data-index="${index}">
+          <span style="flex: 1;">${item.text}</span>
+          <button data-delete="${index}" style="color: #cbd5e1; font-size: 0.9rem;" title="Delete idea">&times;</button>
+        `;
+        todoList.appendChild(row);
+      });
+    }
+
+    todoList.addEventListener('click', (e) => {
+      if (e.target.type === 'checkbox') {
+        const idx = parseInt(e.target.dataset.index, 10);
+        savedTodos[idx].checked = e.target.checked;
+        setStorage(STORAGE_KEYS.TODO, savedTodos);
+        renderTodos();
+        playSound('pop');
+      } else if (e.target.dataset.delete !== undefined) {
+        const idx = parseInt(e.target.dataset.delete, 10);
+        savedTodos.splice(idx, 1);
+        setStorage(STORAGE_KEYS.TODO, savedTodos);
+        renderTodos();
+      }
+    });
+
+    function addNewTodo() {
+      const text = newTodoInput.value.trim();
+      if (!text) return;
+      savedTodos.push({ text: text, checked: false });
+      setStorage(STORAGE_KEYS.TODO, savedTodos);
+      newTodoInput.value = '';
+      renderTodos();
+      playSound('pop');
+    }
+
+    addTodoBtn.addEventListener('click', addNewTodo);
+    newTodoInput.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') addNewTodo();
+    });
+
+    // Sketchbook Page 4: Sticky Notes
+    const stickyNotesContainer = document.getElementById('stickyNotesContainer');
+    const addStickyNoteBtn = document.getElementById('addStickyNoteBtn');
+
+    let savedNotes = getStorage(STORAGE_KEYS.STICKY, [
+      { text: "Remember: Colors don't have to be realistic! Pink elephants are great 🐘", color: "#fef08a", rot: -2 },
+      { text: "Always sign your drawings with a secret star logo ✦", color: "#fbcfe8", rot: 2 },
+      { text: "Practice drawing different cloud shapes every evening!", color: "#bae6fd", rot: -1 }
+    ]);
+
+    function renderStickyNotes() {
+      stickyNotesContainer.innerHTML = '';
+      savedNotes.forEach((note, index) => {
+        const card = document.createElement('div');
+        card.className = 'sticky-note-card';
+        card.style.backgroundColor = note.color;
+        card.style.transform = `rotate(${note.rot}deg)`;
+        card.innerHTML = `
+          <button class="sticky-note-delete" data-index="${index}" title="Remove note">&times;</button>
+          <div>${note.text}</div>
+        `;
+        stickyNotesContainer.appendChild(card);
+      });
+    }
+
+    stickyNotesContainer.addEventListener('click', (e) => {
+      if (e.target.classList.contains('sticky-note-delete')) {
+        const idx = parseInt(e.target.dataset.index, 10);
+        savedNotes.splice(idx, 1);
+        setStorage(STORAGE_KEYS.STICKY, savedNotes);
+        renderStickyNotes();
+      }
+    });
+
+    addStickyNoteBtn.addEventListener('click', () => {
+      const text = prompt("📝 Write a new sticky note for Arnika's sketchbook:");
+      if (text && text.trim()) {
+        const colors = ['#fef08a', '#fbcfe8', '#bae6fd', '#bbf7d0', '#fed7aa', '#ddd6fe'];
+        const randomColor = colors[Math.floor(Math.random() * colors.length)];
+        const randomRot = (Math.random() - 0.5) * 6;
+        savedNotes.push({ text: text.trim(), color: randomColor, rot: randomRot });
+        setStorage(STORAGE_KEYS.STICKY, savedNotes);
+        renderStickyNotes();
+        playSound('pop');
+      }
+    });
+
+    /* ==========================================================================
+       FUN ZONE WIDGETS
+       ========================================================================== */
+    // 1. Color Mixer
+    const mixerColorA = document.getElementById('mixerColorA');
+    const mixerColorB = document.getElementById('mixerColorB');
+    const mixerBoxA = document.getElementById('mixerBoxA');
+    const mixerBoxB = document.getElementById('mixerBoxB');
+    const mixerResultPreview = document.getElementById('mixerResultPreview');
+    const mixerResultName = document.getElementById('mixerResultName');
+    const mixerResultHex = document.getElementById('mixerResultHex');
+    const mixerRandomBtn = document.getElementById('mixerRandomBtn');
+
+    function hexToRgb(hex) {
+      const bigint = parseInt(hex.slice(1), 16);
+      return { r: (bigint >> 16) & 255, g: (bigint >> 8) & 255, b: bigint & 255 };
+    }
+
+    function rgbToHex(r, g, b) {
+      return "#" + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1);
+    }
+
+    function updateColorMixer() {
+      const colA = mixerColorA.value;
+      const colB = mixerColorB.value;
+      mixerBoxA.style.backgroundColor = colA;
+      mixerBoxB.style.backgroundColor = colB;
+
+      const rgbA = hexToRgb(colA);
+      const rgbB = hexToRgb(colB);
+
+      const mixedR = Math.round((rgbA.r + rgbB.r) / 2);
+      const mixedG = Math.round((rgbA.g + rgbB.g) / 2);
+      const mixedB = Math.round((rgbA.b + rgbB.b) / 2);
+
+      const mixedHex = rgbToHex(mixedR, mixedG, mixedB);
+      mixerResultPreview.style.backgroundColor = mixedHex;
+      mixerResultHex.textContent = mixedHex.toUpperCase();
+
+      // Fun color names
+      if (mixedR > 180 && mixedG < 140 && mixedB > 180) mixerResultName.textContent = "Berry Sorbet 🍇";
+      else if (mixedR > 180 && mixedG > 180 && mixedB < 120) mixerResultName.textContent = "Warm Gold ☀️";
+      else if (mixedR < 120 && mixedG > 160 && mixedB > 160) mixerResultName.textContent = "Ocean Lagoon 🌊";
+      else if (mixedR < 130 && mixedG > 180 && mixedB < 130) mixerResultName.textContent = "Spring Sprout 🌱";
+      else if (mixedR > 200 && mixedG < 150 && mixedB < 150) mixerResultName.textContent = "Coral Sunset 🌅";
+      else if (mixedR > 160 && mixedG < 130 && mixedB > 200) mixerResultName.textContent = "Magic Violet 🔮";
+      else mixerResultName.textContent = "Dream Blend ✨";
+    }
+
+    mixerColorA.addEventListener('input', updateColorMixer);
+    mixerColorB.addEventListener('input', updateColorMixer);
+
+    mixerRandomBtn.addEventListener('click', () => {
+      const randomHex1 = '#' + Math.floor(Math.random() * 16777215).toString(16).padStart(6, '0');
+      const randomHex2 = '#' + Math.floor(Math.random() * 16777215).toString(16).padStart(6, '0');
+      mixerColorA.value = randomHex1;
+      mixerColorB.value = randomHex2;
+      updateColorMixer();
+      playSound('pop');
+    });
+
+    // 2. Random Idea Mashup
+    const MASHUP_SUBJECTS = ["A fluffy panda", "A baby dragon", "A cheerful robot", "A sleeping star", "A flying octopus", "A unicorn astronaut", "A shy hedgehog"];
+    const MASHUP_ACTIONS = ["wearing roller skates", "baking blueberry cupcakes", "reading a giant spellbook", "painting with glowing starlight", "drinking warm cocoa", "playing the violin"];
+    const MASHUP_PLACES = ["on top of a rainbow cloud 🌈", "inside a secret coral castle 🌊", "in a neon mushroom forest 🍄", "on Saturn's golden rings 🪐", "in a cozy blanket fort ⛺"];
+
+    const mashupText = document.getElementById('mashupText');
+    const rerollMashupBtn = document.getElementById('rerollMashupBtn');
+    const drawMashupBtn = document.getElementById('drawMashupBtn');
+
+    function generateMashup() {
+      const s = MASHUP_SUBJECTS[Math.floor(Math.random() * MASHUP_SUBJECTS.length)];
+      const a = MASHUP_ACTIONS[Math.floor(Math.random() * MASHUP_ACTIONS.length)];
+      const p = MASHUP_PLACES[Math.floor(Math.random() * MASHUP_PLACES.length)];
+      mashupText.textContent = `"${s} ${a} ${p}"`;
+      playSound('pop');
+    }
+
+    rerollMashupBtn.addEventListener('click', generateMashup);
+    drawMashupBtn.addEventListener('click', () => {
+      setChallengeInspiration(`Idea: ${mashupText.textContent}`);
+      document.getElementById('studio').scrollIntoView({ behavior: 'smooth' });
+    });
+
+    // 3. Art Quiz
+    let quizCurrentIndex = 0;
+    let quizScore = 0;
+    const quizProgress = document.getElementById('quizProgress');
+    const quizScoreText = document.getElementById('quizScoreText');
+    const quizQuestion = document.getElementById('quizQuestion');
+    const quizOptions = document.getElementById('quizOptions');
+    const restartQuizBtn = document.getElementById('restartQuizBtn');
+
+    function renderQuizQuestion() {
+      if (quizCurrentIndex >= QUIZ_QUESTIONS.length) {
+        // Quiz completed
+        quizProgress.textContent = "Quiz Complete! 🎉";
+        quizQuestion.textContent = `You scored ${quizScore} out of ${QUIZ_QUESTIONS.length}! You're a certified Art Genius! 🌟`;
+        quizOptions.innerHTML = '';
+        restartQuizBtn.style.display = 'block';
+        triggerConfetti(60);
+        return;
+      }
+
+      const q = QUIZ_QUESTIONS[quizCurrentIndex];
+      quizProgress.textContent = `Question ${quizCurrentIndex + 1} of ${QUIZ_QUESTIONS.length}`;
+      quizScoreText.textContent = `Score: ${quizScore}`;
+      quizQuestion.textContent = q.question;
+      quizOptions.innerHTML = '';
+      restartQuizBtn.style.display = 'none';
+
+      q.options.forEach((opt, idx) => {
+        const btn = document.createElement('button');
+        btn.className = 'quiz-option-btn';
+        btn.textContent = opt;
+        btn.addEventListener('click', () => handleQuizAnswer(idx, btn));
+        quizOptions.appendChild(btn);
+      });
+    }
+
+    function handleQuizAnswer(selectedIdx, clickedBtn) {
+      const q = QUIZ_QUESTIONS[quizCurrentIndex];
+      const allBtns = quizOptions.querySelectorAll('.quiz-option-btn');
+      allBtns.forEach(b => b.disabled = true);
+
+      if (selectedIdx === q.correct) {
+        clickedBtn.classList.add('correct');
+        quizScore++;
+        quizScoreText.textContent = `Score: ${quizScore}`;
+        playSound('chime');
+      } else {
+        clickedBtn.classList.add('wrong');
+        allBtns[q.correct].classList.add('correct');
+        playSound('pop');
+      }
+
+      setTimeout(() => {
+        quizCurrentIndex++;
+        renderQuizQuestion();
+      }, 1200);
+    }
+
+    restartQuizBtn.addEventListener('click', () => {
+      quizCurrentIndex = 0;
+      quizScore = 0;
+      renderQuizQuestion();
+      playSound('pop');
+    });
+
+    // 4. Compliment Generator
+    const complimentText = document.getElementById('complimentText');
+    const newComplimentBtn = document.getElementById('newComplimentBtn');
+
+    newComplimentBtn.addEventListener('click', () => {
+      const randomComp = COMPLIMENTS[Math.floor(Math.random() * COMPLIMENTS.length)];
+      complimentText.textContent = `"${randomComp}"`;
+      playSound('chime');
+    });
+
+    /* ==========================================================================
+       SECRET ART ROOM (EASTER EGG)
+       ========================================================================== */
+    const secretStarNav = document.getElementById('secretStarNav');
+    const secretRoomOverlay = document.getElementById('secretRoomOverlay');
+    const closeSecretRoomBtn = document.getElementById('closeSecretRoomBtn');
+
+    function openSecretRoom() {
+      secretRoomOverlay.classList.add('active');
+      unlockAchievement('imagination_master');
+      triggerConfetti(90);
+    }
+
+    secretStarNav.addEventListener('click', openSecretRoom);
+    closeSecretRoomBtn.addEventListener('click', () => {
+      secretRoomOverlay.classList.remove('active');
+      playSound('pop');
+    });
+
+    /* ==========================================================================
+       GUESTBOOK SYSTEM
+       ========================================================================== */
+    const guestbookForm = document.getElementById('guestbookForm');
+    const guestNameInput = document.getElementById('guestName');
+    const guestMsgInput = document.getElementById('guestMsg');
+    const emojiPickerRow = document.getElementById('emojiPickerRow');
+    const guestbookStream = document.getElementById('guestbookStream');
+    const guestbookCount = document.getElementById('guestbookCount');
+    const resetGuestbookBtn = document.getElementById('resetGuestbookBtn');
+
+    let selectedEmoji = "🎨";
+
+    emojiPickerRow.addEventListener('click', (e) => {
+      const btn = e.target.closest('.emoji-pick-btn');
+      if (btn) {
+        emojiPickerRow.querySelectorAll('.emoji-pick-btn').forEach(b => b.classList.remove('selected'));
+        btn.classList.add('selected');
+        selectedEmoji = btn.dataset.emoji;
+        playSound('pop');
+      }
+    });
+
+    const INITIAL_GUESTBOOK = [
+      { name: "Mom ❤️", emoji: "💖", msg: "Arnika, your art makes my heart swell with pride every single day. Never stop dreaming big!", date: "Today" },
+      { name: "Mr. Ray (Art Teacher)", emoji: "🎨", msg: "Brilliant brushwork on the Rainbow Garden, Arnika! Your composition skills are growing by leaps and bounds.", date: "Yesterday" },
+      { name: "Zoe (Best Friend)", emoji: "🦄", msg: "I love the friendly dragon! You have to draw us riding it tomorrow at recess!!", date: "2 days ago" }
+    ];
+
+    let guestbookEntries = getStorage(STORAGE_KEYS.GUESTBOOK, INITIAL_GUESTBOOK);
+
+    function renderGuestbook() {
+      guestbookStream.innerHTML = '';
+      guestbookCount.textContent = guestbookEntries.length;
+
+      guestbookEntries.forEach(entry => {
+        const card = document.createElement('div');
+        card.className = 'guest-note-card';
+        card.innerHTML = `
+          <div class="guest-note-header">
+            <div class="guest-author-info">
+              <span class="guest-avatar">${entry.emoji}</span>
+              <span class="guest-name">${entry.name}</span>
+            </div>
+            <span class="guest-date">${entry.date}</span>
+          </div>
+          <p class="guest-msg-text">"${entry.msg}"</p>
+        `;
+        guestbookStream.appendChild(card);
+      });
+    }
+
+    guestbookForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = guestNameInput.value.trim();
+      const msg = guestMsgInput.value.trim();
+      if (!name || !msg) return;
+
+      guestbookEntries.unshift({
+        name: name,
+        emoji: selectedEmoji,
+        msg: msg,
+        date: "Just now"
+      });
+
+      setStorage(STORAGE_KEYS.GUESTBOOK, guestbookEntries);
+      renderGuestbook();
+      guestNameInput.value = '';
+      guestMsgInput.value = '';
+      playSound('fanfare');
+      triggerConfetti(50);
+    });
+
+    resetGuestbookBtn.addEventListener('click', () => {
+      guestbookEntries = [...INITIAL_GUESTBOOK];
+      setStorage(STORAGE_KEYS.GUESTBOOK, guestbookEntries);
+      renderGuestbook();
+      playSound('pop');
+    });
+
+    /* ==========================================================================
+       CURSOR SPARKLE EFFECT ON DESKTOP
+       ========================================================================== */
+    let lastSparkleTime = 0;
+    window.addEventListener('mousemove', (e) => {
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      const now = performance.now();
+      if (now - lastSparkleTime > 75) {
+        lastSparkleTime = now;
+        const sparkle = document.createElement('div');
+        sparkle.className = 'cursor-sparkle';
+        sparkle.style.left = `${e.clientX}px`;
+        sparkle.style.top = `${e.clientY}px`;
+        const colors = ['#fde047', '#f472b6', '#c084fc', '#67e8f9'];
+        sparkle.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+        document.body.appendChild(sparkle);
+        setTimeout(() => sparkle.remove(), 750);
+      }
+    });
+
+    /* ==========================================================================
+       INITIALIZATION
+       ========================================================================== */
+    renderGallery();
+    renderAchievements();
+    renderTodos();
+    renderStickyNotes();
+    renderQuizQuestion();
+    renderGuestbook();
+    updateColorMixer();
+    updateSketchbook();
+  </script>
+</body>
+</html>
